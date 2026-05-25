@@ -265,13 +265,49 @@ a {
     flex: 1.2;
 }
 
+.greeting-row {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
 .greeting {
     font-size: 22px;
     color: var(--accent-light);
     font-weight: 600;
-    display: block;
-    margin-bottom: 15px;
     letter-spacing: 1px;
+}
+
+.badge-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(46, 196, 182, 0.12);
+    border: 1px solid rgba(46, 196, 182, 0.25);
+    color: var(--success);
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    box-shadow: 0 0 10px rgba(46, 196, 182, 0.1);
+}
+
+.status-dot {
+    width: 8px;
+    height: 8px;
+    background-color: var(--success);
+    border-radius: 50%;
+    box-shadow: 0 0 8px var(--success);
+    animation: status-pulse 1.8s infinite ease-in-out;
+}
+
+@keyframes status-pulse {
+    0% { transform: scale(0.9); opacity: 0.6; }
+    50% { transform: scale(1.2); opacity: 1; box-shadow: 0 0 12px var(--success); }
+    100% { transform: scale(0.9); opacity: 0.6; }
 }
 
 .name {
@@ -724,6 +760,122 @@ footer {
     opacity: 1;
     transform: translateY(0);
 }
+/* Education & Certifications Sections */
+.education-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
+.education-card {
+    padding: 35px;
+    position: relative;
+    overflow: hidden;
+}
+
+.education-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 5px;
+    height: 100%;
+    background: linear-gradient(to bottom, var(--accent), var(--accent-light));
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: transform 0.5s ease;
+}
+
+.education-card:hover {
+    transform: translateY(-8px);
+}
+
+.education-card:hover::before {
+    transform: scaleY(1);
+}
+
+.degree {
+    font-size: 24px;
+    margin-top: 10px;
+    margin-bottom: 8px;
+    color: #fff;
+}
+
+.institution {
+    font-size: 16px;
+    color: var(--accent);
+    margin-bottom: 12px;
+    font-weight: 500;
+}
+
+.institution i {
+    margin-right: 6px;
+}
+
+.grade {
+    font-size: 15px;
+    color: var(--accent-light);
+    font-weight: 600;
+    background: rgba(102, 252, 241, 0.08);
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 6px;
+    border: 1px solid rgba(102, 252, 241, 0.15);
+}
+
+.certifications-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+    gap: 30px;
+}
+
+.certification-card {
+    display: flex;
+    gap: 25px;
+    padding: 30px;
+    align-items: flex-start;
+}
+
+.certification-card:hover {
+    transform: translateY(-5px);
+}
+
+.cert-icon {
+    font-size: 32px;
+    color: var(--accent-light);
+    background: rgba(69, 162, 158, 0.15);
+    border: 1px solid rgba(102, 252, 241, 0.25);
+    width: 64px;
+    height: 64px;
+    border-radius: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    transition: var(--transition);
+}
+
+.certification-card:hover .cert-icon {
+    transform: scale(1.1) rotate(10deg);
+    box-shadow: 0 0 15px var(--accent-glow);
+}
+
+.cert-content {
+    flex-grow: 1;
+}
+
+.cert-title {
+    font-size: 20px;
+    color: #fff;
+    margin-bottom: 8px;
+}
+
+.cert-desc {
+    font-size: 15px;
+    color: #aeb0b3;
+    line-height: 1.6;
+}
 
 /* Responsive */
 @media (max-width: 992px) {
@@ -767,13 +919,17 @@ footer {
         width: 300px;
         height: 300px;
     }
-    .about-stats {
+    .about-stats, .education-grid, .certifications-grid {
         grid-template-columns: 1fr;
     }
     .section-title {
         font-size: 36px;
     }
-    .project-card {
+    .project-card, .education-card, .certification-card {
         padding: 25px;
+    }
+    .certification-card {
+        flex-direction: column;
+        gap: 15px;
     }
 }

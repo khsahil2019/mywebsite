@@ -1,83 +1,106 @@
 <?php
-// Dynamic data for the portfolio
-$name = "Sahil Khan";
-$title = "Flutter Developer & Mobile Engineer";
-$about = "I am a passionate Flutter Developer and Software Engineer crafting high-performance, cross-platform mobile applications. With deep expertise in GetX, REST APIs, and modern UI/UX design, I build seamless digital experiences from concept to deployment. I thrive in architecting robust, scalable solutions like TrioTrip and Spexsa, delivering premium interfaces that feel dynamic and alive.";
-$email = "hello@mastersahilkhan.com"; // Placeholder email
-$linkedin = "https://www.linkedin.com/in/mastersahilkhan/";
-$github = "https://github.com/mastersahilkhan"; // Placeholder GitHub
+// Start session for admin panel
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
 
-$experience = [
-    [
-        "role" => "Senior Flutter Developer",
-        "company" => "Tech & Software Solutions",
-        "period" => "2023 - Present",
-        "description" => "Architecting and building production-ready scalable mobile applications. Led the development of TrioTrip, a complete smart tourism ecosystem, integrating AI trip generation, state-to-place hierarchy, and complex navigation flows."
-    ],
-    [
-        "role" => "Mobile App Developer",
-        "company" => "Creative App Studios",
-        "period" => "2021 - 2023",
-        "description" => "Developed cross-platform mobile apps for enterprise clients. Specialized in GetX state management, REST API integration, and creating smooth, animated UIs. Contributed to core architecture layers for high-performance apps like Spexsa."
-    ],
-    [
-        "role" => "Junior Software Engineer",
-        "company" => "StartUp Innovations",
-        "period" => "2020 - 2021",
-        "description" => "Assisted in building full-stack web and mobile apps. Handled PHP/MySQL backend endpoints and built foundational Flutter UI components. Focused heavily on UI/UX precision and responsive designs."
-    ]
+// Load data from data.json
+$dataPath = __DIR__ . '/data.json';
+$data = [];
+if (file_exists($dataPath)) {
+    $data = json_decode(file_get_contents($dataPath), true);
+}
+
+// Fallbacks
+$name = isset($data['name']) ? $data['name'] : "Sahil Khan";
+$title = isset($data['title']) ? $data['title'] : "Flutter Developer & Mobile Engineer";
+$about = isset($data['about']) ? $data['about'] : "I am a passionate Flutter Developer and Software Engineer crafting high-performance, cross-platform mobile applications.";
+$email = isset($data['email']) ? $data['email'] : "hello@mastersahilkhan.com";
+$linkedin = isset($data['linkedin']) ? $data['linkedin'] : "https://www.linkedin.com/in/mastersahilkhan/";
+$github = isset($data['github']) ? $data['github'] : "https://github.com/mastersahilkhan";
+$skills = isset($data['skills']) ? $data['skills'] : ["Flutter", "Dart", "GetX", "PHP", "MySQL", "REST APIs"];
+$stats = isset($data['stats']) ? $data['stats'] : [
+    ["label" => "Years Experience", "value" => "3+"],
+    ["label" => "Projects Completed", "value" => "15+"],
+    ["label" => "DSA Questions", "value" => "120+"],
+    ["label" => "Satisfaction Rate", "value" => "100%"]
 ];
+$experience = isset($data['experience']) ? $data['experience'] : [];
+$projects = isset($data['projects']) ? $data['projects'] : [];
+$education = isset($data['education']) ? $data['education'] : [];
+$certifications = isset($data['certifications']) ? $data['certifications'] : [];
 
-$projects = [
-    [
-        "title" => "TrioTrip Smart Tourism",
-        "description" => "A comprehensive smart tourism ecosystem app providing AI-powered itinerary generation, dynamic data integration, and detailed navigation through Indian states and tourist destinations.",
-        "tags" => ["Flutter", "GetX", "PHP", "MySQL", "AI"],
-        "icon" => "fa-solid fa-map-location-dot",
-        "link" => "#"
-    ],
-    [
-        "title" => "Spexsa Premium Mobile",
-        "description" => "A premium cross-platform mobile application featuring state-of-the-art UI/UX, built with highly optimized performance and seamless, fluid micro-animations.",
-        "tags" => ["Flutter", "Dart", "REST API", "UI/UX"],
-        "icon" => "fa-solid fa-mobile-screen-button",
-        "link" => "#"
-    ],
-    [
-        "title" => "E-Commerce Market Suite",
-        "description" => "A full-fledged e-commerce application with real-time inventory tracking, secure payment gateways, and a customized admin dashboard for order management.",
-        "tags" => ["Flutter", "Firebase", "Stripe", "Node.js"],
-        "icon" => "fa-solid fa-cart-shopping",
-        "link" => "#"
-    ],
-    [
-        "title" => "HealthTrack Pro",
-        "description" => "A fitness and health tracking application allowing users to monitor daily metrics, view interactive charts, and receive customized AI-driven health tips.",
-        "tags" => ["Flutter", "HealthKit", "Charts", "Dart"],
-        "icon" => "fa-solid fa-heart-pulse",
-        "link" => "#"
-    ],
-    [
-        "title" => "API Service Core",
-        "description" => "A robust backend service layer built in Dart for handling complex network requests, automated token refresh, and dynamic data caching strategies.",
-        "tags" => ["Dart", "Network", "Architecture"],
-        "icon" => "fa-solid fa-server",
-        "link" => "#"
-    ],
-    [
-        "title" => "Real Estate Explorer",
-        "description" => "An intuitive property exploration app featuring interactive maps, 3D virtual tours, and real-time messaging between agents and buyers.",
-        "tags" => ["Flutter", "Google Maps", "WebSockets"],
-        "icon" => "fa-solid fa-building",
-        "link" => "#"
-    ]
-];
+// Routing logic
+$request_uri = $_SERVER['REQUEST_URI'];
+$request_path = parse_url($request_uri, PHP_URL_PATH);
 
-$skills = ["Flutter", "Dart", "GetX", "PHP", "MySQL", "REST APIs", "UI/UX Design", "Git", "Firebase", "Figma"];
+// Admin APIs
+if ($request_path === '/admin/api/login') {
+    header('Content-Type: application/json');
+    $input = json_decode(file_get_contents('php://input'), true);
+    if (isset($input['password']) && $input['password'] === 'admin123') {
+        $_SESSION['admin_logged_in'] = true;
+        echo json_encode(["success" => true]);
+    } else {
+        http_response_code(401);
+        echo json_encode(["success" => false, "message" => "Invalid password"]);
+    }
+    exit;
+}
+
+if ($request_path === '/admin/api/logout') {
+    $_SESSION['admin_logged_in'] = false;
+    session_destroy();
+    header('Location: /admin');
+    exit;
+}
+
+if ($request_path === '/admin/api/save') {
+    header('Content-Type: application/json');
+    if (!isset($_SESSION['admin_logged_in']) || $_SESSION['admin_logged_in'] !== true) {
+        http_response_code(403);
+        echo json_encode(["success" => false, "message" => "Unauthorized"]);
+        exit;
+    }
+    $input = json_decode(file_get_contents('php://input'), true);
+    if ($input) {
+        $result = @file_put_contents($dataPath, json_encode($input, JSON_PRETTY_PRINT));
+        if ($result !== false) {
+            echo json_encode(["success" => true]);
+        } else {
+            echo json_encode([
+                "success" => false, 
+                "message" => "Failed to write to data.json. Filesystem might be read-only (e.g. Vercel). You can download your data.json instead.",
+                "readOnly" => true
+            ]);
+        }
+    } else {
+        http_response_code(400);
+        echo json_encode(["success" => false, "message" => "Invalid input"]);
+    }
+    exit;
+}
+
+if ($request_path === '/admin/api/download') {
+    if (!isset($_SESSION['admin_logged_in']) || $_SESSION['admin_logged_in'] !== true) {
+        http_response_code(403);
+        die("Unauthorized");
+    }
+    header('Content-Type: application/json');
+    header('Content-Disposition: attachment; filename="data.json"');
+    echo file_get_contents($dataPath);
+    exit;
+}
+
+// Check if request is for admin panel
+if (strpos($request_path, '/admin') === 0) {
+    include __DIR__ . '/admin.php';
+    exit;
+}
 
 // Helper function for rendering skill badges
 function renderSkill($skill) {
-    return "<span class='skill-badge'>{$skill}</span>";
+    return "<span class='skill-badge'>" . htmlspecialchars($skill) . "</span>";
 }
 ?>
 <!DOCTYPE html>
@@ -112,6 +135,7 @@ function renderSkill($skill) {
                 <li><a href="#about">About</a></li>
                 <li><a href="#experience">Experience</a></li>
                 <li><a href="#projects">Projects</a></li>
+                <li><a href="#education">Education</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </div>
@@ -121,14 +145,17 @@ function renderSkill($skill) {
         <!-- Hero Section -->
         <section id="hero" class="hero">
             <div class="hero-content fade-in">
-                <span class="greeting">Hello, I'm</span>
-                <h1 class="name"><?= $name ?></h1>
-                <h2 class="title type-writer"><?= $title ?></h2>
+                <div class="greeting-row">
+                    <span class="greeting">Hello, I'm</span>
+                    <span class="badge-status"><span class="status-dot"></span> Open For Opportunities</span>
+                </div>
+                <h1 class="name"><?= htmlspecialchars($name) ?></h1>
+                <h2 class="title type-writer"><?= htmlspecialchars($title) ?></h2>
                 <p class="description">Building premium digital products, brands, and experiences through robust code and stunning UI/UX design.</p>
                 
                 <div class="action-buttons">
                     <a href="#projects" class="btn btn-primary">View My Work</a>
-                    <a href="<?= $linkedin ?>" target="_blank" class="btn btn-outline"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+                    <a href="<?= htmlspecialchars($linkedin) ?>" target="_blank" class="btn btn-outline"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
                 </div>
             </div>
             <div class="hero-image fade-in-right">
@@ -146,7 +173,7 @@ function renderSkill($skill) {
             <h3 class="section-title">About <span class="highlight">Me</span></h3>
             <div class="about-grid">
                 <div class="about-text scroll-reveal">
-                    <p><?= $about ?></p>
+                    <p><?= htmlspecialchars($about) ?></p>
                     <div class="skills-container">
                         <h4>My Toolkit</h4>
                         <div class="skills-list">
@@ -157,22 +184,12 @@ function renderSkill($skill) {
                     </div>
                 </div>
                 <div class="about-stats scroll-reveal">
-                    <div class="stat-card glass-panel">
-                        <h3>3+</h3>
-                        <p>Years Experience</p>
-                    </div>
-                    <div class="stat-card glass-panel">
-                        <h3>15+</h3>
-                        <p>Projects Completed</p>
-                    </div>
-                    <div class="stat-card glass-panel">
-                        <h3>100%</h3>
-                        <p>Client Satisfaction</p>
-                    </div>
-                    <div class="stat-card glass-panel">
-                        <h3>1M+</h3>
-                        <p>Lines of Code</p>
-                    </div>
+                    <?php foreach($stats as $stat): ?>
+                        <div class="stat-card glass-panel">
+                            <h3><?= htmlspecialchars($stat['value']) ?></h3>
+                            <p><?= htmlspecialchars($stat['label']) ?></p>
+                        </div>
+                    <?php endforeach; ?>
                 </div>
             </div>
         </section>
@@ -185,10 +202,10 @@ function renderSkill($skill) {
                     <div class="timeline-item scroll-reveal" style="transition-delay: <?= $index * 0.1 ?>s;">
                         <div class="timeline-dot"></div>
                         <div class="timeline-content glass-panel">
-                            <span class="period"><?= $job['period'] ?></span>
-                            <h4 class="role"><?= $job['role'] ?></h4>
-                            <h5 class="company"><i class="fa-solid fa-building"></i> <?= $job['company'] ?></h5>
-                            <p class="desc"><?= $job['description'] ?></p>
+                            <span class="period"><?= htmlspecialchars($job['period']) ?></span>
+                            <h4 class="role"><?= htmlspecialchars($job['role']) ?></h4>
+                            <h5 class="company"><i class="fa-solid fa-building"></i> <?= htmlspecialchars($job['company']) ?></h5>
+                            <p class="desc"><?= htmlspecialchars($job['description']) ?></p>
                         </div>
                     </div>
                 <?php endforeach; ?>
@@ -202,19 +219,53 @@ function renderSkill($skill) {
                 <?php foreach($projects as $index => $project): ?>
                     <div class="project-card glass-panel scroll-reveal" style="transition-delay: <?= ($index % 3) * 0.1 ?>s;">
                         <div class="project-icon">
-                            <i class="<?= $project['icon'] ?>"></i>
+                            <i class="<?= htmlspecialchars($project['icon']) ?>"></i>
                         </div>
-                        <h4 class="project-title"><?= $project['title'] ?></h4>
-                        <p class="project-desc"><?= $project['description'] ?></p>
+                        <h4 class="project-title"><?= htmlspecialchars($project['title']) ?></h4>
+                        <p class="project-desc"><?= htmlspecialchars($project['description']) ?></p>
                         <div class="project-tags">
                             <?php foreach($project['tags'] as $tag): ?>
-                                <span class="tag"><?= $tag ?></span>
+                                <span class="tag"><?= htmlspecialchars($tag) ?></span>
                             <?php endforeach; ?>
                         </div>
-                        <a href="<?= $project['link'] ?>" class="project-link">View Project <i class="fa-solid fa-arrow-right"></i></a>
+                        <a href="<?= htmlspecialchars($project['link']) ?>" class="project-link" <?= $project['link'] !== '#' ? 'target="_blank"' : '' ?>>View Project <i class="fa-solid fa-arrow-right"></i></a>
                     </div>
                 <?php endforeach; ?>
             </div>
+        </section>
+
+        <!-- Education Section -->
+        <section id="education" class="education section-padding">
+            <h3 class="section-title">Education & <span class="highlight">Qualifications</span></h3>
+            <div class="education-grid">
+                <?php foreach($education as $index => $edu): ?>
+                    <div class="education-card glass-panel scroll-reveal" style="transition-delay: <?= $index * 0.1 ?>s;">
+                        <span class="period"><?= htmlspecialchars($edu['period']) ?></span>
+                        <h4 class="degree"><?= htmlspecialchars($edu['degree']) ?></h4>
+                        <h5 class="institution"><i class="fa-solid fa-university"></i> <?= htmlspecialchars($edu['institution']) ?></h5>
+                        <?php if(!empty($edu['grade'])): ?>
+                            <p class="grade"><?= htmlspecialchars($edu['grade']) ?></p>
+                        <?php endif; ?>
+                    </div>
+                <?php endforeach; ?>
+            </div>
+
+            <?php if(!empty($certifications)): ?>
+                <h3 class="section-title" style="margin-top: 80px;">Key Achievements & <span class="highlight">Certifications</span></h3>
+                <div class="certifications-grid">
+                    <?php foreach($certifications as $index => $cert): ?>
+                        <div class="certification-card glass-panel scroll-reveal" style="transition-delay: <?= $index * 0.1 ?>s;">
+                            <div class="cert-icon">
+                                <i class="fa-solid fa-award"></i>
+                            </div>
+                            <div class="cert-content">
+                                <h4 class="cert-title"><?= htmlspecialchars($cert['title']) ?></h4>
+                                <p class="cert-desc"><?= htmlspecialchars($cert['description']) ?></p>
+                            </div>
+                        </div>
+                    <?php endforeach; ?>
+                </div>
+            <?php endif; ?>
         </section>
 
         <!-- Contact Section -->
@@ -222,10 +273,10 @@ function renderSkill($skill) {
             <div class="contact-box glass-panel scroll-reveal">
                 <h3 class="section-title">Let's Work <span class="highlight">Together</span></h3>
                 <p>I'm currently available for freelance work and open to new opportunities. Whether you have a project to discuss or just want to say hi, my inbox is open!</p>
-                <a href="mailto:<?= $email ?>" class="btn btn-primary btn-large">Say Hello</a>
+                <a href="mailto:<?= htmlspecialchars($email) ?>" class="btn btn-primary btn-large">Say Hello</a>
                 <div class="social-links">
-                    <a href="<?= $linkedin ?>" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-                    <a href="<?= $github ?>" target="_blank" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                    <a href="<?= htmlspecialchars($linkedin) ?>" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="<?= htmlspecialchars($github) ?>" target="_blank" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
                 </div>
             </div>
         </section>

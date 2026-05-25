@@ -1,0 +1,157 @@
+{
+    "name": "Sahil Khan",
+    "title": "Flutter Developer & Mobile Engineer",
+    "about": "I am a passionate Flutter Developer and Software Engineer crafting high-performance, cross-platform mobile applications. With deep expertise in GetX, REST APIs, and modern UI/UX design, I build seamless digital experiences from concept to deployment. I thrive in architecting robust, scalable solutions like TrioTrip and Spexsa, delivering premium interfaces that feel dynamic and alive. Actively seeking new opportunities.",
+    "email": "hello@mastersahilkhan.com",
+    "linkedin": "https://www.linkedin.com/in/mastersahilkhan/",
+    "github": "https://github.com/mastersahilkhan",
+    "skills": [
+        "Flutter",
+        "Dart",
+        "GetX",
+        "REST APIs",
+        "Firebase",
+        "Google Maps API",
+        "Java",
+        "PHP",
+        "MySQL",
+        "UI/UX Design",
+        "Git",
+        "DSA",
+        "Problem Solving"
+    ],
+    "stats": [
+        {
+            "label": "Years Experience",
+            "value": "4+"
+        },
+        {
+            "label": "Projects Completed",
+            "value": "15+"
+        },
+        {
+            "label": "DSA Questions",
+            "value": "120+"
+        },
+        {
+            "label": "Satisfaction Rate",
+            "value": "100%"
+        }
+    ],
+    "experience": [
+        {
+            "role": "Flutter Developer",
+            "company": "Misha Infotech Pvt Ltd",
+            "period": "Feb 2025 – Feb 2026",
+            "description": "Currently developing enterprise-grade mobile applications using Flutter framework, focusing on scalable architecture and optimal performance. Collaborating with product managers and designers to translate business requirements into technical specifications and functional mobile solutions. Implementing best practices in code quality, testing, and deployment processes to ensure robust application delivery."
+        },
+        {
+            "role": "Flutter Developer",
+            "company": "Rafts and Rivers LLC",
+            "period": "Apr 2022 – Jan 2025",
+            "description": "Developed and maintained multiple production-ready Flutter applications, serving thousands of active users across Android and iOS platforms. Architected and implemented complex features including real-time API integrations, payment gateway functionality, and interactive UI components using GetX for efficient state management. Optimized application performance by identifying bottlenecks and implementing caching strategies, resulting in enhanced user experience and reduced load times. Integrated third-party services including Google Maps API and Firebase. Collaborated with cross-functional teams in Agile sprints."
+        },
+        {
+            "role": "Flutter Developer Intern",
+            "company": "Madhesiya Software Pvt Ltd",
+            "period": "Oct 2021 – Mar 2022",
+            "description": "Completed 6-month intensive internship program focused on Flutter mobile application development and software engineering best practices. Contributed to the development of client-facing mobile applications, participating in the full software development lifecycle. Gained hands-on experience with Dart, Flutter widgets, API integration, and responsive design. Worked with senior developers to resolve technical challenges and implement feature enhancements."
+        }
+    ],
+    "projects": [
+        {
+            "title": "Crux Flutter Play Store",
+            "description": "Engineered a comprehensive start-up platform integrating project management, team communication, and analytics tools to streamline workflow efficiency and enhance team collaboration. Implemented GetX state management for seamless user experience and integrated third-party APIs for real-time product data retrieval and performance optimization.",
+            "tags": [
+                "Flutter",
+                "Dart",
+                "GetX",
+                "Firebase"
+            ],
+            "icon": "fa-solid fa-briefcase",
+            "link": "#"
+        },
+        {
+            "title": "Kabia Travels",
+            "description": "Developed an intelligent travel planning application featuring personalized itineraries, local recommendations, and seamless booking integration. Designed and implemented interactive UI using Flutter framework with PHP backend for robust data processing, and integrated payment gateways to facilitate hassle-free transactions.",
+            "tags": [
+                "Flutter",
+                "PHP",
+                "MySQL",
+                "Play Store"
+            ],
+            "icon": "fa-solid fa-plane-departure",
+            "link": "#"
+        },
+        {
+            "title": "India Ka Apna Store",
+            "description": "Built a feature-rich e-commerce application enabling users to purchase products online and communicate directly with vendors in real-time. Implemented user registration, profile management, and creation systems, along with a responsive interface optimized for all device sizes.",
+            "tags": [
+                "Flutter",
+                "Dart",
+                "E-commerce"
+            ],
+            "icon": "fa-solid fa-store",
+            "link": "#"
+        },
+        {
+            "title": "Cash Panther & Cash Leo",
+            "description": "Created engaging gamification applications offering rewarding experiences through task completion, gaming, and daily leaderboard participation. Developed a reward accumulation system with in-app purchase functionality to drive user retention and monetization.",
+            "tags": [
+                "Flutter",
+                "Gamification",
+                "Play Store"
+            ],
+            "icon": "fa-solid fa-gamepad",
+            "link": "#"
+        },
+        {
+            "title": "Cruxx News",
+            "description": "Delivered a concise news aggregation platform providing real-time updates on stocks, markets, cryptocurrencies, and global events. Integrated market trend analysis and investment insights features powered by data-driven algorithms, ensuring seamless performance across devices.",
+            "tags": [
+                "Flutter",
+                "News",
+                "API Integration",
+                "Play Store"
+            ],
+            "icon": "fa-solid fa-newspaper",
+            "link": "#"
+        }
+    ],
+    "education": [
+        {
+            "degree": "Master of Computer Application (MCA)",
+            "institution": "Galgotias University, Greater Noida",
+            "period": "July 2022 \u2013 July 2024",
+            "grade": "Percentage: 83%"
+        },
+        {
+            "degree": "Bachelor of Computer Application (BCA)",
+            "institution": "Integral University, Lucknow",
+            "period": "July 2019 \u2013 July 2022",
+            "grade": "Percentage: 86.15%"
+        },
+        {
+            "degree": "Intermediate (Class 12)",
+            "institution": "Lucknow Public School, Madhoganj",
+            "period": "July 2018 \u2013 July 2019",
+            "grade": "Percentage: 78.40%"
+        },
+        {
+            "degree": "High School (Class 10)",
+            "institution": "Lucknow Public School, Madhoganj",
+            "period": "July 2016 \u2013 July 2017",
+            "grade": "Percentage: 87.83%"
+        }
+    ],
+    "certifications": [
+        {
+            "title": "Problem-Solving Excellence",
+            "description": "Solved 50+ Java and front-end development tasks\/questions across multiple coding platforms."
+        },
+        {
+            "title": "Data Structures & Algorithms Proficiency",
+            "description": "Practiced daily DSA challenges and solved 70+ questions on GeeksforGeeks, LeetCode, and HackerRank."
+        }
+    ]
+}
