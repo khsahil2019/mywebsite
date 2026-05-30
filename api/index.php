@@ -15,9 +15,10 @@ if (file_exists($dataPath)) {
 $name = isset($data['name']) ? $data['name'] : "Sahil Khan";
 $title = isset($data['title']) ? $data['title'] : "Flutter Developer & Mobile Engineer";
 $about = isset($data['about']) ? $data['about'] : "I am a passionate Flutter Developer and Software Engineer crafting high-performance, cross-platform mobile applications.";
-$email = isset($data['email']) ? $data['email'] : "hello@mastersahilkhan.com";
+$email = isset($data['email']) ? $data['email'] : "sahilkh3014@gmail.com";
+$phone = isset($data['phone']) ? $data['phone'] : "+91 8739093014";
 $linkedin = isset($data['linkedin']) ? $data['linkedin'] : "https://www.linkedin.com/in/mastersahilkhan/";
-$github = isset($data['github']) ? $data['github'] : "https://github.com/mastersahilkhan";
+$github = isset($data['github']) ? $data['github'] : "https://github.com/khsahil2019";
 $skills = isset($data['skills']) ? $data['skills'] : ["Flutter", "Dart", "GetX", "PHP", "MySQL", "REST APIs"];
 $stats = isset($data['stats']) ? $data['stats'] : [
     ["label" => "Years Experience", "value" => "3+"],
@@ -92,6 +93,11 @@ if ($request_path === '/admin/api/download') {
     exit;
 }
 
+if ($request_path === '/resume') {
+    include __DIR__ . '/resume.php';
+    exit;
+}
+
 // Check if request is for admin panel
 if (strpos($request_path, '/admin') === 0) {
     include __DIR__ . '/admin.php';
@@ -135,6 +141,7 @@ function renderSkill($skill) {
                 <li><a href="#about">About</a></li>
                 <li><a href="#experience">Experience</a></li>
                 <li><a href="#projects">Projects</a></li>
+                <li><a href="#github-repos">GitHub</a></li>
                 <li><a href="#education">Education</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
@@ -155,7 +162,8 @@ function renderSkill($skill) {
                 
                 <div class="action-buttons">
                     <a href="#projects" class="btn btn-primary">View My Work</a>
-                    <a href="<?= htmlspecialchars($linkedin) ?>" target="_blank" class="btn btn-outline"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+                    <a href="/resume" target="_blank" class="btn btn-outline"><i class="fa-solid fa-file-invoice"></i> View Resume</a>
+                    <a href="/assets/Sahil_Khan_Resume.pdf" download="Sahil_Khan_Resume.pdf" class="btn btn-outline"><i class="fa-solid fa-download"></i> Download CV</a>
                 </div>
             </div>
             <div class="hero-image fade-in-right">
@@ -234,6 +242,21 @@ function renderSkill($skill) {
             </div>
         </section>
 
+        <!-- GitHub Repositories Section -->
+        <section id="github-repos" class="github-repos section-padding">
+            <h3 class="section-title">Open Source & <span class="highlight">GitHub Repositories</span></h3>
+            <div class="repos-grid" id="github-repos-grid">
+                <!-- Loaded dynamically via JS -->
+                <div class="repo-loading">
+                    <div class="spinner"></div>
+                    <p>Fetching repositories from GitHub...</p>
+                </div>
+            </div>
+            <div class="github-more-btn scroll-reveal">
+                <a href="<?= htmlspecialchars($github) ?>" target="_blank" class="btn btn-outline"><i class="fa-brands fa-github"></i> View All Repositories</a>
+            </div>
+        </section>
+
         <!-- Education Section -->
         <section id="education" class="education section-padding">
             <h3 class="section-title">Education & <span class="highlight">Qualifications</span></h3>
@@ -273,6 +296,10 @@ function renderSkill($skill) {
             <div class="contact-box glass-panel scroll-reveal">
                 <h3 class="section-title">Let's Work <span class="highlight">Together</span></h3>
                 <p>I'm currently available for freelance work and open to new opportunities. Whether you have a project to discuss or just want to say hi, my inbox is open!</p>
+                <div class="contact-details-row" style="margin: 25px 0; display: flex; flex-direction: column; gap: 12px; align-items: center; font-size: 17px; font-weight: 500;">
+                    <span><i class="fa-solid fa-envelope" style="color: var(--accent-light); margin-right: 8px;"></i> <?= htmlspecialchars($email) ?></span>
+                    <span><i class="fa-solid fa-phone" style="color: var(--accent-light); margin-right: 8px;"></i> <?= htmlspecialchars($phone) ?></span>
+                </div>
                 <a href="mailto:<?= htmlspecialchars($email) ?>" class="btn btn-primary btn-large">Say Hello</a>
                 <div class="social-links">
                     <a href="<?= htmlspecialchars($linkedin) ?>" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>

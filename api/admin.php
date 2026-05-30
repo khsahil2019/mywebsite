@@ -666,16 +666,22 @@ if (file_exists($dataPath)) {
                             <div class="grid-2">
                                 <div class="form-group">
                                     <label>Email Address</label>
-                                    <input type="email" id="prof-email" class="form-control" placeholder="hello@mastersahilkhan.com">
+                                    <input type="email" id="prof-email" class="form-control" placeholder="sahilkh3014@gmail.com">
                                 </div>
+                                <div class="form-group">
+                                    <label>Phone Number</label>
+                                    <input type="text" id="prof-phone" class="form-control" placeholder="+91 8739093014">
+                                </div>
+                            </div>
+                            <div class="grid-2">
                                 <div class="form-group">
                                     <label>LinkedIn Profile URL</label>
                                     <input type="url" id="prof-linkedin" class="form-control" placeholder="https://linkedin.com/in/username">
                                 </div>
-                            </div>
-                            <div class="form-group">
-                                <label>GitHub Profile URL</label>
-                                <input type="url" id="prof-github" class="form-control" placeholder="https://github.com/username">
+                                <div class="form-group">
+                                    <label>GitHub Profile URL</label>
+                                    <input type="url" id="prof-github" class="form-control" placeholder="https://github.com/username">
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -884,6 +890,7 @@ if (file_exists($dataPath)) {
             document.getElementById('prof-title').value = dataState.title || '';
             document.getElementById('prof-about').value = dataState.about || '';
             document.getElementById('prof-email').value = dataState.email || '';
+            document.getElementById('prof-phone').value = dataState.phone || '';
             document.getElementById('prof-linkedin').value = dataState.linkedin || '';
             document.getElementById('prof-github').value = dataState.github || '';
         }
@@ -1212,6 +1219,7 @@ if (file_exists($dataPath)) {
                 title: document.getElementById('prof-title').value.trim(),
                 about: document.getElementById('prof-about').value.trim(),
                 email: document.getElementById('prof-email').value.trim(),
+                phone: document.getElementById('prof-phone').value.trim(),
                 linkedin: document.getElementById('prof-linkedin').value.trim(),
                 github: document.getElementById('prof-github').value.trim(),
                 skills: dataState.skills,

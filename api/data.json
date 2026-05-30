@@ -2,9 +2,10 @@
     "name": "Sahil Khan",
     "title": "Flutter Developer & Mobile Engineer",
     "about": "I am a passionate Flutter Developer and Software Engineer crafting high-performance, cross-platform mobile applications. With deep expertise in GetX, REST APIs, and modern UI/UX design, I build seamless digital experiences from concept to deployment. I thrive in architecting robust, scalable solutions like TrioTrip and Spexsa, delivering premium interfaces that feel dynamic and alive. Actively seeking new opportunities.",
-    "email": "hello@mastersahilkhan.com",
+    "email": "sahilkh3014@gmail.com",
+    "phone": "+91 8739093014",
     "linkedin": "https://www.linkedin.com/in/mastersahilkhan/",
-    "github": "https://github.com/mastersahilkhan",
+    "github": "https://github.com/khsahil2019",
     "skills": [
         "Flutter",
         "Dart",
@@ -40,10 +41,16 @@
     ],
     "experience": [
         {
+            "role": "Senior Flutter Developer",
+            "company": "vSafe Softwares PVT. LTD.",
+            "period": "Feb 2026 – Present",
+            "description": "Leading the development of secure, high-performance mobile applications remotely. Architecting state management patterns, optimizing APIs, and overseeing the delivery of robust Flutter applications. Collaborating with cross-functional teams to design and implement premium UI/UX features, and ensuring top-tier performance on both iOS and Android platforms."
+        },
+        {
             "role": "Flutter Developer",
             "company": "Misha Infotech Pvt Ltd",
-            "period": "Feb 2025 – Feb 2026",
-            "description": "Currently developing enterprise-grade mobile applications using Flutter framework, focusing on scalable architecture and optimal performance. Collaborating with product managers and designers to translate business requirements into technical specifications and functional mobile solutions. Implementing best practices in code quality, testing, and deployment processes to ensure robust application delivery."
+            "period": "Feb 2025 – 12 Feb 2026",
+            "description": "Developed enterprise-grade mobile applications using Flutter framework, focusing on scalable architecture and optimal performance. Collaborated with product managers and designers to translate business requirements into technical specifications and functional mobile solutions. Implemented best practices in code quality, testing, and deployment processes."
         },
         {
             "role": "Flutter Developer",
@@ -122,36 +129,40 @@
         {
             "degree": "Master of Computer Application (MCA)",
             "institution": "Galgotias University, Greater Noida",
-            "period": "July 2022 \u2013 July 2024",
+            "period": "July 2022 – July 2024",
             "grade": "Percentage: 83%"
         },
         {
             "degree": "Bachelor of Computer Application (BCA)",
             "institution": "Integral University, Lucknow",
-            "period": "July 2019 \u2013 July 2022",
+            "period": "July 2019 – July 2022",
             "grade": "Percentage: 86.15%"
         },
         {
             "degree": "Intermediate (Class 12)",
             "institution": "Lucknow Public School, Madhoganj",
-            "period": "July 2018 \u2013 July 2019",
+            "period": "July 2018 – July 2019",
             "grade": "Percentage: 78.40%"
         },
         {
             "degree": "High School (Class 10)",
             "institution": "Lucknow Public School, Madhoganj",
-            "period": "July 2016 \u2013 July 2017",
+            "period": "July 2016 – July 2017",
             "grade": "Percentage: 87.83%"
         }
     ],
     "certifications": [
         {
-            "title": "Problem-Solving Excellence",
-            "description": "Solved 50+ Java and front-end development tasks\/questions across multiple coding platforms."
+            "title": "Java Certification",
+            "description": "Professional Java Certification completed from Madhesiya Software Pvt Ltd."
         },
         {
             "title": "Data Structures & Algorithms Proficiency",
-            "description": "Practiced daily DSA challenges and solved 70+ questions on GeeksforGeeks, LeetCode, and HackerRank."
+            "description": "Practiced daily DSA challenges and solved 120+ questions on GeeksforGeeks, LeetCode, and HackerRank."
+        },
+        {
+            "title": "Play Store Publisher",
+            "description": "Successfully published and maintained multiple Flutter apps on the Google Play Store, serving thousands of active users."
         }
     ]
 }
