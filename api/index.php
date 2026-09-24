@@ -213,7 +213,7 @@ function renderSkill($skill) {
                             <span class="period"><?= htmlspecialchars($job['period']) ?></span>
                             <h4 class="role"><?= htmlspecialchars($job['role']) ?></h4>
                             <h5 class="company"><i class="fa-solid fa-building"></i> <?= htmlspecialchars($job['company']) ?></h5>
-                            <p class="desc"><?= htmlspecialchars($job['description']) ?></p>
+                            <p class="desc"><?= nl2br(htmlspecialchars($job['description'])) ?></p>
                         </div>
                     </div>
                 <?php endforeach; ?>
@@ -230,7 +230,7 @@ function renderSkill($skill) {
                             <i class="<?= htmlspecialchars($project['icon']) ?>"></i>
                         </div>
                         <h4 class="project-title"><?= htmlspecialchars($project['title']) ?></h4>
-                        <p class="project-desc"><?= htmlspecialchars($project['description']) ?></p>
+                        <p class="project-desc"><?= nl2br(htmlspecialchars($project['description'])) ?></p>
                         <div class="project-tags">
                             <?php foreach($project['tags'] as $tag): ?>
                                 <span class="tag"><?= htmlspecialchars($tag) ?></span>

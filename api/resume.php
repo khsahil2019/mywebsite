@@ -10,16 +10,18 @@ if (file_exists($dataPath)) {
     $data = json_decode(file_get_contents($dataPath), true);
 }
 
-// Fallbacks
-$name = isset($data['name']) ? $data['name'] : "Sahil Khan";
-$title = isset($data['title']) ? $data['title'] : "Flutter Developer & Mobile Engineer";
-$about = isset($data['about']) ? $data['about'] : "I am a passionate Flutter Developer and Software Engineer crafting high-performance, cross-platform mobile applications.";
+// Data bindings with fallbacks
+$name = isset($data['name']) ? $data['name'] : "SAHIL KHAN";
+$location = isset($data['location']) ? $data['location'] : "Greater Noida, Uttar Pradesh";
+$title = isset($data['title']) ? $data['title'] : "Flutter Developer";
+$about = isset($data['about']) ? $data['about'] : "Results-driven Flutter Developer with 4+ years of hands-on experience designing, developing, and deploying high-performance mobile applications for Android and iOS platforms. Proven expertise in building scalable, data-driven solutions using Flutter, Dart, Node.js, PHP, Firebase, RESTful APIs, HTML and CSS. Demonstrated ability to integrate third-party APIs, optimize application performance, and implement responsive UI/UX designs. Adept at collaborating with cross-functional teams in Agile environments to deliver reliable digital products and business-focused solutions.";
 $email = isset($data['email']) ? $data['email'] : "sahilkh3014@gmail.com";
-$phone = isset($data['phone']) ? $data['phone'] : "+91 8739093014";
+$phone = isset($data['phone']) ? $data['phone'] : "+918739093014";
 $linkedin = isset($data['linkedin']) ? $data['linkedin'] : "https://www.linkedin.com/in/mastersahilkhan/";
 $github = isset($data['github']) ? $data['github'] : "https://github.com/khsahil2019";
-$skills = isset($data['skills']) ? $data['skills'] : ["Flutter", "Dart", "GetX", "PHP", "MySQL", "REST APIs"];
+$portfolio = isset($data['portfolio']) ? $data['portfolio'] : "/";
 $experience = isset($data['experience']) ? $data['experience'] : [];
+$projects = isset($data['projects']) ? $data['projects'] : [];
 $education = isset($data['education']) ? $data['education'] : [];
 $certifications = isset($data['certifications']) ? $data['certifications'] : [];
 ?>
@@ -28,18 +30,17 @@ $certifications = isset($data['certifications']) ? $data['certifications'] : [];
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?= htmlspecialchars($name) ?> - Professional Resume</title>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <title><?= htmlspecialchars($name) ?> - Resume</title>
+    <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@300;400;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --primary: #1F2833;
-            --accent: #45A29E;
-            --accent-light: #66FCF1;
-            --text-dark: #2B2D42;
-            --text-muted: #6C757D;
-            --bg-light: #F8F9FA;
-            --border-color: #E9ECEF;
+            --primary-navy: #1f3a5f;
+            --accent-link: #0b5394;
+            --text-dark: #222222;
+            --text-muted: #333333;
+            --border-line: #1f3a5f;
+            --bg-page: #eef2f6;
         }
 
         * {
@@ -49,27 +50,17 @@ $certifications = isset($data['certifications']) ? $data['certifications'] : [];
         }
 
         body {
-            font-family: 'Inter', sans-serif;
-            background-color: var(--bg-light);
+            font-family: 'Segoe UI', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--bg-page);
             color: var(--text-dark);
-            line-height: 1.5;
-            padding: 40px 20px;
+            line-height: 1.35;
+            font-size: 13px;
+            padding: 24px 15px;
         }
 
-        .resume-container {
-            max-width: 850px;
-            margin: 0 auto;
-            background: #fff;
-            padding: 50px;
-            border-radius: 8px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-            position: relative;
-        }
-
-        /* Floating action buttons */
         .actions-bar {
-            max-width: 850px;
-            margin: 0 auto 20px;
+            max-width: 820px;
+            margin: 0 auto 16px;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -79,212 +70,298 @@ $certifications = isset($data['certifications']) ? $data['certifications'] : [];
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            padding: 10px 20px;
-            background: var(--primary);
-            color: #fff;
-            border: none;
-            border-radius: 6px;
-            font-family: 'Outfit', sans-serif;
+            padding: 8px 16px;
+            background: var(--primary-navy);
+            color: #ffffff;
+            border: 1px solid var(--primary-navy);
+            border-radius: 5px;
             font-weight: 600;
+            font-size: 13px;
             cursor: pointer;
             text-decoration: none;
-            transition: all 0.3s ease;
+            transition: all 0.2s ease;
         }
 
         .btn:hover {
-            opacity: 0.9;
-            transform: translateY(-1px);
-        }
-
-        .btn-outline {
-            background: transparent;
-            border: 2px solid var(--accent);
-            color: var(--primary);
-        }
-
-        .btn-outline:hover {
-            background: var(--accent);
+            background: #142a47;
             color: #fff;
         }
 
-        /* Resume Styling */
-        header {
-            border-bottom: 2px solid var(--accent);
-            padding-bottom: 25px;
-            margin-bottom: 30px;
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
+        .btn-outline {
+            background: #fff;
+            color: var(--primary-navy);
+            border: 1px solid #ccd2d8;
         }
 
-        .header-left h1 {
-            font-family: 'Outfit', sans-serif;
-            font-size: 38px;
-            font-weight: 800;
-            color: var(--primary);
-            margin-bottom: 5px;
-            letter-spacing: -0.5px;
+        .btn-outline:hover {
+            background: var(--primary-navy);
+            color: #fff;
         }
 
-        .header-left h2 {
-            font-family: 'Outfit', sans-serif;
-            font-size: 20px;
-            font-weight: 500;
-            color: var(--accent);
-            letter-spacing: 0.5px;
+        .resume-sheet {
+            max-width: 820px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 34px 40px;
+            box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
+            border-radius: 2px;
         }
 
-        .header-right {
-            text-align: right;
-            font-size: 14px;
-            color: var(--text-dark);
-            display: flex;
-            flex-direction: column;
-            gap: 6px;
-        }
-
-        .header-right a {
-            color: var(--text-dark);
-            text-decoration: none;
-        }
-
-        .header-right a:hover {
-            color: var(--accent);
-        }
-
-        .header-right i {
-            width: 18px;
-            color: var(--accent);
+        /* Header */
+        .resume-header {
             text-align: center;
-            margin-right: 6px;
+            margin-bottom: 8px;
         }
 
-        .section {
-            margin-bottom: 30px;
-        }
-
-        .section-title {
-            font-family: 'Outfit', sans-serif;
-            font-size: 18px;
+        .resume-name {
+            font-size: 24px;
             font-weight: 700;
-            color: var(--primary);
-            text-transform: uppercase;
             letter-spacing: 1px;
-            margin-bottom: 15px;
+            color: var(--primary-navy);
+            margin-bottom: 2px;
+            text-transform: uppercase;
+        }
+
+        .resume-location {
+            font-size: 12px;
+            color: #555;
+            margin-bottom: 3px;
+        }
+
+        .resume-contacts {
+            font-size: 12px;
             display: flex;
+            justify-content: center;
             align-items: center;
-            gap: 10px;
+            flex-wrap: wrap;
+            gap: 6px;
+            padding-bottom: 6px;
+            border-bottom: 2px solid var(--border-line);
         }
 
-        .section-title::after {
-            content: '';
-            flex-grow: 1;
-            height: 1px;
-            background-color: var(--border-color);
+        .resume-contacts a {
+            color: var(--accent-link);
+            text-decoration: underline;
+            text-underline-offset: 2px;
         }
 
-        .summary p {
-            color: var(--text-muted);
-            font-size: 14.5px;
-            line-height: 1.6;
+        .resume-contacts span.sep {
+            color: #777;
         }
 
-        .experience-item, .education-item {
-            margin-bottom: 20px;
+        /* Section titles */
+        .section-header {
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--primary-navy);
+            text-transform: uppercase;
+            letter-spacing: 0.6px;
+            padding-bottom: 2px;
+            margin-top: 10px;
+            margin-bottom: 5px;
+            border-bottom: 1.5px solid var(--border-line);
         }
 
-        .experience-item:last-child, .education-item:last-child {
-            margin-bottom: 0;
+        .section-content {
+            font-size: 12.2px;
+            color: var(--text-dark);
         }
 
-        .item-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
+        .summary-text {
+            text-align: justify;
+            line-height: 1.34;
+        }
+
+        /* Bullet lists */
+        ul.bullet-list {
+            list-style: none;
+            padding-left: 0;
+            margin: 1px 0 4px 0;
+        }
+
+        ul.bullet-list li {
+            position: relative;
+            padding-left: 14px;
+            margin-bottom: 2.5px;
+            line-height: 1.32;
+            color: #242424;
+            text-align: justify;
+        }
+
+        ul.bullet-list li::before {
+            content: "•";
+            position: absolute;
+            left: 2px;
+            top: -0.5px;
+            color: #242424;
+            font-size: 12px;
+        }
+
+        /* Subheadings */
+        .sub-header-title {
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-top: 3px;
+            margin-bottom: 1px;
+        }
+
+        .exp-entry, .proj-entry, .edu-entry {
             margin-bottom: 6px;
         }
 
-        .item-title {
-            font-family: 'Outfit', sans-serif;
-            font-size: 16px;
+        .exp-entry:last-child, .proj-entry:last-child, .edu-entry:last-child {
+            margin-bottom: 0;
+        }
+
+        .entry-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 1px;
+        }
+
+        .company-role {
+            font-size: 12.5px;
             font-weight: 700;
-            color: var(--primary);
+            color: var(--primary-navy);
         }
 
-        .item-meta {
-            font-size: 14px;
-            color: var(--accent);
+        .company-role .role-title {
             font-weight: 600;
+            color: #2b2b2b;
         }
 
-        .item-period {
-            font-size: 13.5px;
-            color: var(--text-muted);
+        .date-range {
+            font-size: 11.5px;
             font-weight: 500;
+            color: #333;
+            white-space: nowrap;
         }
 
-        .item-desc {
-            font-size: 14px;
-            color: var(--text-muted);
-            line-height: 1.6;
+        .proj-title-row {
+            font-size: 12.5px;
+            font-weight: 700;
+            color: #111;
+            margin-bottom: 1px;
         }
 
-        .skills-grid {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
+        .proj-title-row .proj-tech {
+            font-weight: normal;
+            font-style: italic;
+            color: #444;
         }
 
-        .skill-tag {
-            background-color: var(--bg-light);
-            border: 1px solid var(--border-color);
-            padding: 6px 12px;
-            border-radius: 4px;
-            font-size: 13px;
+        .proj-title-row a {
+            color: var(--accent-link);
+            text-decoration: underline;
+            margin-left: 4px;
             font-weight: 500;
-            color: var(--primary);
+            font-style: normal;
         }
 
-        .certifications-list {
-            list-style: none;
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
+        .edu-inst {
+            font-style: italic;
+            color: #333;
         }
 
         .cert-item {
-            font-size: 14px;
+            margin-bottom: 4px;
+            line-height: 1.34;
         }
 
-        .cert-item strong {
-            color: var(--primary);
+        .check-sym {
+            font-weight: bold;
+            color: #1f3a5f;
+            margin-right: 4px;
         }
 
-        .cert-item span {
-            color: var(--text-muted);
-            display: block;
-            margin-top: 2px;
+        /* Page break divider for accurate 2-page print layout */
+        .page-break {
+            break-after: page;
+            page-break-after: always;
         }
 
-        /* Print Media Styles */
+        @page {
+            size: A4 portrait;
+            margin: 8mm 10mm;
+        }
+
         @media print {
             body {
-                background-color: #fff;
+                background: #fff;
                 padding: 0;
                 color: #000;
-            }
-
-            .resume-container {
-                box-shadow: none;
-                padding: 0;
+                font-size: 9.3pt;
+                line-height: 1.28;
             }
 
             .no-print {
                 display: none !important;
             }
 
-            .btn {
-                display: none !important;
+            .resume-sheet {
+                box-shadow: none;
+                padding: 0;
+                max-width: 100%;
+            }
+
+            .resume-name {
+                font-size: 17pt;
+                margin-bottom: 1pt;
+            }
+
+            .resume-location {
+                font-size: 8.5pt;
+                margin-bottom: 2pt;
+            }
+
+            .resume-contacts {
+                font-size: 8.5pt;
+                padding-bottom: 4pt;
+                margin-bottom: 2pt;
+            }
+
+            .section-header {
+                font-size: 9.8pt;
+                margin-top: 7pt;
+                margin-bottom: 3pt;
+                padding-bottom: 1.5pt;
+            }
+
+            .section-content {
+                font-size: 9.2pt;
+            }
+
+            .company-role, .proj-title-row {
+                font-size: 9.4pt;
+            }
+
+            .date-range {
+                font-size: 8.8pt;
+            }
+
+            .page-break {
+                height: 0;
+                margin: 0;
+                padding: 0;
+            }
+
+            ul.bullet-list {
+                margin: 1pt 0 2.5pt 0;
+            }
+
+            ul.bullet-list li {
+                margin-bottom: 1.5pt;
+                line-height: 1.25;
+            }
+
+            .exp-entry, .proj-entry, .edu-entry {
+                margin-bottom: 4.5pt;
+            }
+
+            a {
+                color: #0b5394 !important;
+                text-decoration: underline !important;
             }
         }
     </style>
@@ -293,85 +370,240 @@ $certifications = isset($data['certifications']) ? $data['certifications'] : [];
 
     <div class="actions-bar no-print">
         <a href="/" class="btn btn-outline"><i class="fa-solid fa-arrow-left"></i> Back to Portfolio</a>
-        <button onclick="window.print()" class="btn"><i class="fa-solid fa-print"></i> Print / Save as PDF</button>
+        <div style="display: flex; gap: 10px;">
+            <a href="/assets/Sahil_Khan_Resume.pdf" download="Sahil_Khan_Resume.pdf" class="btn btn-outline"><i class="fa-solid fa-download"></i> Download PDF</a>
+            <button onclick="window.print()" class="btn"><i class="fa-solid fa-print"></i> Print / Save as PDF</button>
+        </div>
     </div>
 
-    <div class="resume-container">
-        <header>
-            <div class="header-left">
-                <h1><?= htmlspecialchars($name) ?></h1>
-                <h2><?= htmlspecialchars($title) ?></h2>
-            </div>
-            <div class="header-right">
-                <div><i class="fa-solid fa-envelope"></i> <a href="mailto:<?= htmlspecialchars($email) ?>"><?= htmlspecialchars($email) ?></a></div>
-                <div><i class="fa-solid fa-phone"></i> <?= htmlspecialchars($phone) ?></div>
-                <div><i class="fa-brands fa-linkedin"></i> <a href="<?= htmlspecialchars($linkedin) ?>" target="_blank">linkedin.com/in/mastersahilkhan</a></div>
-                <div><i class="fa-brands fa-github"></i> <a href="<?= htmlspecialchars($github) ?>" target="_blank">github.com/khsahil2019</a></div>
+    <div class="resume-sheet">
+        <!-- ==================== PAGE 1 ==================== -->
+        <header class="resume-header">
+            <h1 class="resume-name"><?= htmlspecialchars($name) ?></h1>
+            <div class="resume-location"><?= htmlspecialchars($location) ?></div>
+            <div class="resume-contacts">
+                <span><?= htmlspecialchars($phone) ?></span>
+                <span class="sep">|</span>
+                <a href="mailto:<?= htmlspecialchars($email) ?>"><?= htmlspecialchars($email) ?></a>
+                <span class="sep">|</span>
+                <a href="<?= htmlspecialchars($linkedin) ?>" target="_blank">LinkedIn</a>
+                <span class="sep">|</span>
+                <a href="<?= htmlspecialchars($github) ?>" target="_blank">GitHub</a>
+                <span class="sep">|</span>
+                <a href="<?= htmlspecialchars($portfolio) ?>">Portfolio</a>
             </div>
         </header>
 
-        <section class="section summary">
-            <h3 class="section-title">Professional Summary</h3>
-            <p><?= htmlspecialchars($about) ?></p>
-        </section>
-
-        <section class="section">
-            <h3 class="section-title">Experience</h3>
-            <?php foreach ($experience as $job): ?>
-                <div class="experience-item">
-                    <div class="item-header">
-                        <div>
-                            <span class="item-title"><?= htmlspecialchars($job['role']) ?></span>
-                            <span class="item-meta"> | <?= htmlspecialchars($job['company']) ?></span>
-                        </div>
-                        <span class="item-period"><?= htmlspecialchars($job['period']) ?></span>
-                    </div>
-                    <div class="item-desc">
-                        <?= htmlspecialchars($job['description']) ?>
-                    </div>
-                </div>
-            <?php endforeach; ?>
-        </section>
-
-        <section class="section">
-            <h3 class="section-title">Skills</h3>
-            <div class="skills-grid">
-                <?php foreach ($skills as $skill): ?>
-                    <span class="skill-tag"><?= htmlspecialchars($skill) ?></span>
-                <?php endforeach; ?>
+        <!-- Professional Summary -->
+        <section>
+            <h2 class="section-header">PROFESSIONAL SUMMARY</h2>
+            <div class="section-content">
+                <p class="summary-text"><?= htmlspecialchars($about) ?></p>
             </div>
         </section>
 
-        <section class="section">
-            <h3 class="section-title">Education</h3>
-            <?php foreach ($education as $edu): ?>
-                <div class="education-item">
-                    <div class="item-header">
-                        <div>
-                            <span class="item-title"><?= htmlspecialchars($edu['degree']) ?></span>
-                            <span class="item-meta"> | <?= htmlspecialchars($edu['institution']) ?></span>
-                        </div>
-                        <span class="item-period"><?= htmlspecialchars($edu['period']) ?></span>
-                    </div>
-                    <?php if (!empty($edu['grade'])): ?>
-                        <div class="item-desc" style="font-weight: 500; color: var(--accent);">
-                            <?= htmlspecialchars($edu['grade']) ?>
-                        </div>
-                    <?php endif; ?>
+        <!-- Core Competencies -->
+        <section>
+            <h2 class="section-header">CORE COMPETENCIES</h2>
+            <div class="section-content">
+                <div class="sub-header-title">Mobile Development:</div>
+                <ul class="bullet-list">
+                    <li>Flutter &amp; Dart (Primary Expertise)</li>
+                    <li>Cross-Platform Development (iOS/Android)</li>
+                    <li>Flutter Version Control (FVC)</li>
+                    <li>Mobile Sensor Integration</li>
+                    <li>Performance Optimization &amp; Debugging</li>
+                </ul>
+
+                <div class="sub-header-title" style="margin-top: 3px;">Technical Proficiencies:</div>
+                <ul class="bullet-list">
+                    <li><strong>Programming:</strong> Dart, C, Java, JavaScript</li>
+                    <li><strong>Frontend:</strong> Flutter Framework, HTML, CSS</li>
+                    <li><strong>Backend &amp; APIs:</strong> Node.js, Firebase, PHP, RESTful APIs, Third-Party Integration</li>
+                    <li><strong>Tools:</strong> Git, GitHub</li>
+                    <li><strong>Methodologies:</strong> Agile Development, CI/CD</li>
+                </ul>
+
+                <div style="margin-top: 3px; line-height: 1.34;">
+                    <strong>Additional Skills:</strong> Google Map Integration, Push Notifications, Payment Gateway Integration, State Management (GetX), Responsive Design, Data Structures &amp; Algorithms, Version Control &amp; Workflow Management
                 </div>
-            <?php endforeach; ?>
+            </div>
         </section>
 
-        <section class="section">
-            <h3 class="section-title">Achievements & Certifications</h3>
-            <ul class="certifications-list">
-                <?php foreach ($certifications as $cert): ?>
-                    <li class="cert-item">
-                        <strong><?= htmlspecialchars($cert['title']) ?></strong>
-                        <span><?= htmlspecialchars($cert['description']) ?></span>
-                    </li>
-                <?php endforeach; ?>
-            </ul>
+        <!-- Professional Experience -->
+        <section>
+            <h2 class="section-header">PROFESSIONAL EXPERIENCE</h2>
+            <div class="section-content">
+                <!-- Job 1 -->
+                <div class="exp-entry">
+                    <div class="entry-header">
+                        <span class="company-role">Vsafe Software Pvt Ltd <span style="font-weight: normal; color: #555;">|</span> <span class="role-title">Flutter Developer</span></span>
+                        <span class="date-range">Mar 2026 – Present</span>
+                    </div>
+                    <ul class="bullet-list">
+                        <li>Developing and maintaining cross-platform Flutter applications for Android and iOS with scalable architecture and responsive user interfaces.</li>
+                        <li>Integrating REST APIs and backend services, resolving application issues, and improving performance across production releases.</li>
+                        <li>Collaborating with backend, design, QA, and product teams throughout development, testing, deployment, and support.</li>
+                    </ul>
+                </div>
+
+                <!-- Job 2 -->
+                <div class="exp-entry">
+                    <div class="entry-header">
+                        <span class="company-role">Rafts and Rivers LLC <span style="font-weight: normal; color: #555;">|</span> <span class="role-title">Flutter Developer</span></span>
+                        <span class="date-range">Apr 2022 – Feb 2026</span>
+                    </div>
+                    <ul class="bullet-list">
+                        <li>Developed and maintained multiple production-ready Flutter applications across Android and iOS platforms.</li>
+                        <li>Architected and implemented complex features including real-time API integrations, payment gateway functionality, and interactive UI components using GetX for efficient state management.</li>
+                        <li>Optimized application performance by identifying bottlenecks and implementing caching and API-flow improvements.</li>
+                        <li>Integrated third-party services including Google Maps API, Firebase authentication, push notifications, and backend-driven workflows.</li>
+                        <li>Collaborated with cross-functional teams in Agile sprints to deliver projects on schedule while maintaining code quality standards.</li>
+                    </ul>
+                </div>
+
+                <!-- Job 3 -->
+                <div class="exp-entry">
+                    <div class="entry-header">
+                        <span class="company-role">Madhesiya Software Pvt Ltd <span style="font-weight: normal; color: #555;">|</span> <span class="role-title">Flutter Developer Intern</span></span>
+                        <span class="date-range">Oct 2021 – Mar 2022</span>
+                    </div>
+                    <ul class="bullet-list">
+                        <li>Completed 6-month intensive internship program focused on Flutter mobile application development and software engineering best practices.</li>
+                        <li>Contributed to client-facing mobile applications across requirement analysis, development, API integration, testing, and deployment.</li>
+                        <li>Gained hands-on experience with Dart programming, Flutter widgets, API integration, and responsive design principles.</li>
+                        <li>Worked collaboratively with senior developers to resolve technical challenges and implement feature enhancements.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <div class="page-break"></div>
+
+        <!-- ==================== PAGE 2 ==================== -->
+        <!-- Key Projects & Achievements -->
+        <section style="margin-top: 0;">
+            <h2 class="section-header" style="margin-top: 0;">KEY PROJECTS &amp; ACHIEVEMENTS</h2>
+            <div class="section-content">
+                <!-- Project 1 -->
+                <div class="proj-entry">
+                    <div class="proj-title-row">
+                        <span>Crux Flutter Play Store</span> <span style="font-weight: normal; color: #555;">|</span> <span class="proj-tech">Flutter, Dart, GetX, Firebase</span>
+                    </div>
+                    <ul class="bullet-list">
+                        <li>Engineered a comprehensive start-up platform integrating project management, team communication, and analytics tools.</li>
+                        <li>Implemented GetX state management and integrated third-party APIs for real-time data-driven functionality.</li>
+                    </ul>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="proj-entry">
+                    <div class="proj-title-row">
+                        <span>Kabia Travels</span> <span style="font-weight: normal; color: #555;">|</span> <span class="proj-tech">Flutter, PHP, Play Store</span>
+                    </div>
+                    <ul class="bullet-list">
+                        <li>Developed an intelligent travel planning application featuring personalized itineraries, local recommendations, booking integration, and payment functionality.</li>
+                    </ul>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="proj-entry">
+                    <div class="proj-title-row">
+                        <span>SPEAXA</span> <span style="font-weight: normal; color: #555;">|</span> <span class="proj-tech">Flutter, Node.js, HTML, CSS, REST APIs</span> <span style="font-weight: normal; color: #555;">|</span> <a href="#" target="_blank">Website</a> <span style="font-weight: normal; color: #555;">|</span> <a href="#" target="_blank">Play Store</a>
+                    </div>
+                    <ul class="bullet-list">
+                        <li>Developed a multi-role education platform supporting digital learning workflows for teachers, students, parents, and administrators.</li>
+                        <li>Built Flutter mobile experiences integrated with Node.js/REST APIs and web components using HTML and CSS.</li>
+                        <li>Implemented class/session workflows, course and batch management, attendance, assignments/assessments, notifications, progress tracking, reports, and role-based dashboards.</li>
+                        <li>Supported interactive learning and teacher-led workflows with backend-driven data synchronization and responsive interfaces.</li>
+                    </ul>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="proj-entry">
+                    <div class="proj-title-row">
+                        <span>Human Heal</span> <span style="font-weight: normal; color: #555;">|</span> <span class="proj-tech">Flutter, Play Store</span> <span style="font-weight: normal; color: #555;">|</span> <a href="#" target="_blank">Play Store</a>
+                    </div>
+                    <ul class="bullet-list">
+                        <li>Developed a service-focused mobile platform that enables users to explore trusted services, book appointments, track requests, access important information, and review previous activity in one place.</li>
+                        <li>Designed simple and organized booking, consultation, and activity-management flows focused on convenience and user-friendly navigation.</li>
+                        <li>Implemented user-data and booking-preference workflows with privacy, transparency, communication controls, and secure handling principles in mind.</li>
+                    </ul>
+                </div>
+
+                <!-- Project 5 -->
+                <div class="proj-entry">
+                    <div class="proj-title-row">
+                        <span>Cash Panther &amp; Cash Leo</span> <span style="font-weight: normal; color: #555;">|</span> <span class="proj-tech">Flutter, Play Store</span>
+                    </div>
+                    <ul class="bullet-list">
+                        <li>Created gamification applications offering rewarding experiences through task completion, gaming, and daily leaderboard participation.</li>
+                        <li>Developed reward accumulation and in-app purchase functionality with responsive interfaces across device types.</li>
+                    </ul>
+                </div>
+
+                <!-- Project 6 -->
+                <div class="proj-entry">
+                    <div class="proj-title-row">
+                        <span>Cruxx News</span> <span style="font-weight: normal; color: #555;">|</span> <span class="proj-tech">Flutter, Play Store</span>
+                    </div>
+                    <ul class="bullet-list">
+                        <li>Delivered a concise news aggregation platform providing real-time updates on stocks, markets, cryptocurrencies, and global events.</li>
+                        <li>Designed responsive application architecture for seamless performance across various device configurations.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education -->
+        <section>
+            <h2 class="section-header">EDUCATION</h2>
+            <div class="section-content">
+                <div class="edu-entry">
+                    <div class="entry-header">
+                        <span class="company-role">Master of Computer Application (MCA)</span>
+                        <span class="date-range">July 2022 – July 2024</span>
+                    </div>
+                    <div class="edu-inst">Galgotias University, Greater Noida <span style="font-style: normal; color: #222;">| Percentage: 83%</span></div>
+                </div>
+
+                <div class="edu-entry">
+                    <div class="entry-header">
+                        <span class="company-role">Bachelor of Computer Application (BCA)</span>
+                        <span class="date-range">July 2019 – July 2022</span>
+                    </div>
+                    <div class="edu-inst">Integral University, Lucknow <span style="font-style: normal; color: #222;">| Percentage: 86.15%</span></div>
+                </div>
+
+                <div class="edu-entry">
+                    <div class="entry-header">
+                        <span class="company-role">Intermediate (Class 12)</span>
+                        <span class="date-range">July 2018 – July 2019</span>
+                    </div>
+                    <div class="edu-inst">Lucknow Public School, Madhoganj <span style="font-style: normal; color: #222;">| Percentage: 78.40%</span></div>
+                </div>
+
+                <div class="edu-entry">
+                    <div class="entry-header">
+                        <span class="company-role">High School (Class 10)</span>
+                        <span class="date-range">July 2016 – July 2017</span>
+                    </div>
+                    <div class="edu-inst">Lucknow Public School, Madhoganj <span style="font-style: normal; color: #222;">| Percentage: 87.83%</span></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Certifications & Professional Development -->
+        <section>
+            <h2 class="section-header">CERTIFICATIONS &amp; PROFESSIONAL DEVELOPMENT</h2>
+            <div class="section-content">
+                <div class="cert-item">
+                    <span class="check-sym">✓</span><strong>Problem-Solving Excellence:</strong> Solved 50+ Java and front-end development tasks/questions across multiple coding platforms.
+                </div>
+                <div class="cert-item">
+                    <span class="check-sym">✓</span><strong>Data Structures &amp; Algorithms Proficiency:</strong> Practiced daily DSA challenges and solved 70+ questions on GeeksforGeeks, LeetCode, and HackerRank.
+                </div>
+            </div>
         </section>
     </div>
 

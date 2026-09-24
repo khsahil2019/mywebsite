@@ -1,26 +1,63 @@
 {
-    "name": "Sahil Khan",
-    "title": "Flutter Developer & Mobile Engineer",
-    "about": "I am a passionate Flutter Developer and Software Engineer crafting high-performance, cross-platform mobile applications. With deep expertise in GetX, REST APIs, and modern UI/UX design, I build seamless digital experiences from concept to deployment. I thrive in architecting robust, scalable solutions like TrioTrip and Spexsa, delivering premium interfaces that feel dynamic and alive. Actively seeking new opportunities.",
+    "name": "SAHIL KHAN",
+    "location": "Greater Noida, Uttar Pradesh",
+    "title": "Flutter Developer",
+    "about": "Results-driven Flutter Developer with 4+ years of hands-on experience designing, developing, and deploying high-performance mobile applications for Android and iOS platforms. Proven expertise in building scalable, data-driven solutions using Flutter, Dart, Node.js, PHP, Firebase, RESTful APIs, HTML and CSS. Demonstrated ability to integrate third-party APIs, optimize application performance, and implement responsive UI/UX designs. Adept at collaborating with cross-functional teams in Agile environments to deliver reliable digital products and business-focused solutions.",
     "email": "sahilkh3014@gmail.com",
-    "phone": "+91 8739093014",
+    "phone": "+918739093014",
     "linkedin": "https://www.linkedin.com/in/mastersahilkhan/",
     "github": "https://github.com/khsahil2019",
     "skills": [
-        "Flutter",
-        "Dart",
-        "GetX",
-        "REST APIs",
-        "Firebase",
-        "Google Maps API",
-        "Java",
+        "Flutter & Dart",
+        "Cross-Platform (iOS/Android)",
+        "State Management (GetX)",
+        "Node.js",
         "PHP",
-        "MySQL",
-        "UI/UX Design",
-        "Git",
-        "DSA",
-        "Problem Solving"
+        "Firebase",
+        "RESTful APIs",
+        "Google Maps API",
+        "Push Notifications",
+        "Payment Gateways",
+        "HTML & CSS",
+        "Java",
+        "JavaScript",
+        "C",
+        "Git & GitHub",
+        "Agile Development & CI/CD",
+        "Data Structures & Algorithms"
     ],
+    "core_competencies": {
+        "mobile_development": [
+            "Flutter & Dart (Primary Expertise)",
+            "Cross-Platform Development (iOS/Android)",
+            "Flutter Version Control (FVC)",
+            "Mobile Sensor Integration",
+            "Performance Optimization & Debugging"
+        ],
+        "technical_proficiencies": [
+            {
+                "category": "Programming",
+                "skills": "Dart, C, Java, JavaScript"
+            },
+            {
+                "category": "Frontend",
+                "skills": "Flutter Framework, HTML, CSS"
+            },
+            {
+                "category": "Backend & APIs",
+                "skills": "Node.js, Firebase, PHP, RESTful APIs, Third-Party Integration"
+            },
+            {
+                "category": "Tools",
+                "skills": "Git, GitHub"
+            },
+            {
+                "category": "Methodologies",
+                "skills": "Agile Development, CI/CD"
+            }
+        ],
+        "additional_skills": "Google Map Integration, Push Notifications, Payment Gateway Integration, State Management (GetX), Responsive Design, Data Structures & Algorithms, Version Control & Workflow Management"
+    },
     "stats": [
         {
             "label": "Years Experience",
@@ -31,7 +68,7 @@
             "value": "15+"
         },
         {
-            "label": "DSA Questions",
+            "label": "Coding Problems Solved",
             "value": "120+"
         },
         {
@@ -41,88 +78,143 @@
     ],
     "experience": [
         {
-            "role": "Senior Flutter Developer",
-            "company": "vSafe Softwares PVT. LTD.",
-            "period": "Feb 2026 – Present",
-            "description": "Leading the development of secure, high-performance mobile applications remotely. Architecting state management patterns, optimizing APIs, and overseeing the delivery of robust Flutter applications. Collaborating with cross-functional teams to design and implement premium UI/UX features, and ensuring top-tier performance on both iOS and Android platforms."
-        },
-        {
             "role": "Flutter Developer",
-            "company": "Misha Infotech Pvt Ltd",
-            "period": "Feb 2025 – 12 Feb 2026",
-            "description": "Developed enterprise-grade mobile applications using Flutter framework, focusing on scalable architecture and optimal performance. Collaborated with product managers and designers to translate business requirements into technical specifications and functional mobile solutions. Implemented best practices in code quality, testing, and deployment processes."
+            "company": "Vsafe Software Pvt Ltd",
+            "period": "Mar 2026 – Present",
+            "description": "• Developing and maintaining cross-platform Flutter applications for Android and iOS with scalable architecture and responsive user interfaces.\n• Integrating REST APIs and backend services, resolving application issues, and improving performance across production releases.\n• Collaborating with backend, design, QA, and product teams throughout development, testing, deployment, and support.",
+            "highlights": [
+                "Developing and maintaining cross-platform Flutter applications for Android and iOS with scalable architecture and responsive user interfaces.",
+                "Integrating REST APIs and backend services, resolving application issues, and improving performance across production releases.",
+                "Collaborating with backend, design, QA, and product teams throughout development, testing, deployment, and support."
+            ]
         },
         {
             "role": "Flutter Developer",
             "company": "Rafts and Rivers LLC",
-            "period": "Apr 2022 – Jan 2025",
-            "description": "Developed and maintained multiple production-ready Flutter applications, serving thousands of active users across Android and iOS platforms. Architected and implemented complex features including real-time API integrations, payment gateway functionality, and interactive UI components using GetX for efficient state management. Optimized application performance by identifying bottlenecks and implementing caching strategies, resulting in enhanced user experience and reduced load times. Integrated third-party services including Google Maps API and Firebase. Collaborated with cross-functional teams in Agile sprints."
+            "period": "Apr 2022 – Feb 2026",
+            "description": "• Developed and maintained multiple production-ready Flutter applications across Android and iOS platforms.\n• Architected and implemented complex features including real-time API integrations, payment gateway functionality, and interactive UI components using GetX for efficient state management.\n• Optimized application performance by identifying bottlenecks and implementing caching and API-flow improvements.\n• Integrated third-party services including Google Maps API, Firebase authentication, push notifications, and backend-driven workflows.\n• Collaborated with cross-functional teams in Agile sprints to deliver projects on schedule while maintaining code quality standards.",
+            "highlights": [
+                "Developed and maintained multiple production-ready Flutter applications across Android and iOS platforms.",
+                "Architected and implemented complex features including real-time API integrations, payment gateway functionality, and interactive UI components using GetX for efficient state management.",
+                "Optimized application performance by identifying bottlenecks and implementing caching and API-flow improvements.",
+                "Integrated third-party services including Google Maps API, Firebase authentication, push notifications, and backend-driven workflows.",
+                "Collaborated with cross-functional teams in Agile sprints to deliver projects on schedule while maintaining code quality standards."
+            ]
         },
         {
             "role": "Flutter Developer Intern",
             "company": "Madhesiya Software Pvt Ltd",
             "period": "Oct 2021 – Mar 2022",
-            "description": "Completed 6-month intensive internship program focused on Flutter mobile application development and software engineering best practices. Contributed to the development of client-facing mobile applications, participating in the full software development lifecycle. Gained hands-on experience with Dart, Flutter widgets, API integration, and responsive design. Worked with senior developers to resolve technical challenges and implement feature enhancements."
+            "description": "• Completed 6-month intensive internship program focused on Flutter mobile application development and software engineering best practices.\n• Contributed to client-facing mobile applications across requirement analysis, development, API integration, testing, and deployment.\n• Gained hands-on experience with Dart programming, Flutter widgets, API integration, and responsive design principles.\n• Worked collaboratively with senior developers to resolve technical challenges and implement feature enhancements.",
+            "highlights": [
+                "Completed 6-month intensive internship program focused on Flutter mobile application development and software engineering best practices.",
+                "Contributed to client-facing mobile applications across requirement analysis, development, API integration, testing, and deployment.",
+                "Gained hands-on experience with Dart programming, Flutter widgets, API integration, and responsive design principles.",
+                "Worked collaboratively with senior developers to resolve technical challenges and implement feature enhancements."
+            ]
         }
     ],
     "projects": [
         {
             "title": "Crux Flutter Play Store",
-            "description": "Engineered a comprehensive start-up platform integrating project management, team communication, and analytics tools to streamline workflow efficiency and enhance team collaboration. Implemented GetX state management for seamless user experience and integrated third-party APIs for real-time product data retrieval and performance optimization.",
+            "description": "• Engineered a comprehensive start-up platform integrating project management, team communication, and analytics tools.\n• Implemented GetX state management and integrated third-party APIs for real-time data-driven functionality.",
             "tags": [
                 "Flutter",
                 "Dart",
                 "GetX",
                 "Firebase"
             ],
+            "tech": "Flutter, Dart, GetX, Firebase",
             "icon": "fa-solid fa-briefcase",
-            "link": "#"
+            "link": "#",
+            "highlights": [
+                "Engineered a comprehensive start-up platform integrating project management, team communication, and analytics tools.",
+                "Implemented GetX state management and integrated third-party APIs for real-time data-driven functionality."
+            ]
         },
         {
             "title": "Kabia Travels",
-            "description": "Developed an intelligent travel planning application featuring personalized itineraries, local recommendations, and seamless booking integration. Designed and implemented interactive UI using Flutter framework with PHP backend for robust data processing, and integrated payment gateways to facilitate hassle-free transactions.",
+            "description": "• Developed an intelligent travel planning application featuring personalized itineraries, local recommendations, booking integration, and payment functionality.",
             "tags": [
                 "Flutter",
                 "PHP",
-                "MySQL",
                 "Play Store"
             ],
+            "tech": "Flutter, PHP, Play Store",
             "icon": "fa-solid fa-plane-departure",
-            "link": "#"
+            "link": "#",
+            "highlights": [
+                "Developed an intelligent travel planning application featuring personalized itineraries, local recommendations, booking integration, and payment functionality."
+            ]
         },
         {
-            "title": "India Ka Apna Store",
-            "description": "Built a feature-rich e-commerce application enabling users to purchase products online and communicate directly with vendors in real-time. Implemented user registration, profile management, and creation systems, along with a responsive interface optimized for all device sizes.",
+            "title": "SPEAXA",
+            "description": "• Developed a multi-role education platform supporting digital learning workflows for teachers, students, parents, and administrators.\n• Built Flutter mobile experiences integrated with Node.js/REST APIs and web components using HTML and CSS.\n• Implemented class/session workflows, course and batch management, attendance, assignments/assessments, notifications, progress tracking, reports, and role-based dashboards.\n• Supported interactive learning and teacher-led workflows with backend-driven data synchronization and responsive interfaces.",
             "tags": [
                 "Flutter",
-                "Dart",
-                "E-commerce"
+                "Node.js",
+                "HTML",
+                "CSS",
+                "REST APIs"
             ],
-            "icon": "fa-solid fa-store",
-            "link": "#"
+            "tech": "Flutter, Node.js, HTML, CSS, REST APIs",
+            "icon": "fa-solid fa-graduation-cap",
+            "link": "#",
+            "highlights": [
+                "Developed a multi-role education platform supporting digital learning workflows for teachers, students, parents, and administrators.",
+                "Built Flutter mobile experiences integrated with Node.js/REST APIs and web components using HTML and CSS.",
+                "Implemented class/session workflows, course and batch management, attendance, assignments/assessments, notifications, progress tracking, reports, and role-based dashboards.",
+                "Supported interactive learning and teacher-led workflows with backend-driven data synchronization and responsive interfaces."
+            ]
+        },
+        {
+            "title": "Human Heal",
+            "description": "• Developed a service-focused mobile platform that enables users to explore trusted services, book appointments, track requests, access important information, and review previous activity in one place.\n• Designed simple and organized booking, consultation, and activity-management flows focused on convenience and user-friendly navigation.\n• Implemented user-data and booking-preference workflows with privacy, transparency, communication controls, and secure handling principles in mind.",
+            "tags": [
+                "Flutter",
+                "Play Store",
+                "Healthcare"
+            ],
+            "tech": "Flutter, Play Store",
+            "icon": "fa-solid fa-heart-pulse",
+            "link": "#",
+            "highlights": [
+                "Developed a service-focused mobile platform that enables users to explore trusted services, book appointments, track requests, access important information, and review previous activity in one place.",
+                "Designed simple and organized booking, consultation, and activity-management flows focused on convenience and user-friendly navigation.",
+                "Implemented user-data and booking-preference workflows with privacy, transparency, communication controls, and secure handling principles in mind."
+            ]
         },
         {
             "title": "Cash Panther & Cash Leo",
-            "description": "Created engaging gamification applications offering rewarding experiences through task completion, gaming, and daily leaderboard participation. Developed a reward accumulation system with in-app purchase functionality to drive user retention and monetization.",
+            "description": "• Created gamification applications offering rewarding experiences through task completion, gaming, and daily leaderboard participation.\n• Developed reward accumulation and in-app purchase functionality with responsive interfaces across device types.",
             "tags": [
                 "Flutter",
-                "Gamification",
-                "Play Store"
+                "Play Store",
+                "Gamification"
             ],
+            "tech": "Flutter, Play Store",
             "icon": "fa-solid fa-gamepad",
-            "link": "#"
+            "link": "#",
+            "highlights": [
+                "Created gamification applications offering rewarding experiences through task completion, gaming, and daily leaderboard participation.",
+                "Developed reward accumulation and in-app purchase functionality with responsive interfaces across device types."
+            ]
         },
         {
             "title": "Cruxx News",
-            "description": "Delivered a concise news aggregation platform providing real-time updates on stocks, markets, cryptocurrencies, and global events. Integrated market trend analysis and investment insights features powered by data-driven algorithms, ensuring seamless performance across devices.",
+            "description": "• Delivered a concise news aggregation platform providing real-time updates on stocks, markets, cryptocurrencies, and global events.\n• Designed responsive application architecture for seamless performance across various device configurations.",
             "tags": [
                 "Flutter",
-                "News",
-                "API Integration",
-                "Play Store"
+                "Play Store",
+                "News"
             ],
+            "tech": "Flutter, Play Store",
             "icon": "fa-solid fa-newspaper",
-            "link": "#"
+            "link": "#",
+            "highlights": [
+                "Delivered a concise news aggregation platform providing real-time updates on stocks, markets, cryptocurrencies, and global events.",
+                "Designed responsive application architecture for seamless performance across various device configurations."
+            ]
         }
     ],
     "education": [
@@ -153,16 +245,12 @@
     ],
     "certifications": [
         {
-            "title": "Java Certification",
-            "description": "Professional Java Certification completed from Madhesiya Software Pvt Ltd."
+            "title": "Problem-Solving Excellence",
+            "description": "Solved 50+ Java and front-end development tasks/questions across multiple coding platforms."
         },
         {
             "title": "Data Structures & Algorithms Proficiency",
-            "description": "Practiced daily DSA challenges and solved 120+ questions on GeeksforGeeks, LeetCode, and HackerRank."
-        },
-        {
-            "title": "Play Store Publisher",
-            "description": "Successfully published and maintained multiple Flutter apps on the Google Play Store, serving thousands of active users."
+            "description": "Practiced daily DSA challenges and solved 70+ questions on GeeksforGeeks, LeetCode, and HackerRank."
         }
     ]
 }
