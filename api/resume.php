@@ -500,71 +500,68 @@ $certifications = isset($data['certifications']) ? $data['certifications'] : [];
         <section style="margin-top: 0;">
             <h2 class="section-header" style="margin-top: 0;">KEY PROJECTS &amp; ACHIEVEMENTS</h2>
             <div class="section-content">
-                <!-- Project 1 -->
+                <!-- Project 1: Speaxa Teacher -->
                 <div class="proj-entry">
                     <div class="proj-title-row">
-                        <span>Crux Flutter Play Store</span> <span style="font-weight: normal; color: #555;">|</span> <span class="proj-tech">Flutter, Dart, GetX, Firebase</span>
-                    </div>
-                    <ul class="bullet-list">
-                        <li>Engineered a comprehensive start-up platform integrating project management, team communication, and analytics tools.</li>
-                        <li>Implemented GetX state management and integrated third-party APIs for real-time data-driven functionality.</li>
-                    </ul>
-                </div>
-
-                <!-- Project 2 -->
-                <div class="proj-entry">
-                    <div class="proj-title-row">
-                        <span>Kabia Travels</span> <span style="font-weight: normal; color: #555;">|</span> <span class="proj-tech">Flutter, Play Store</span>
-                    </div>
-                    <ul class="bullet-list">
-                        <li>Developed an intelligent travel planning application featuring personalized itineraries, local recommendations, booking integration, and payment functionality.</li>
-                    </ul>
-                </div>
-
-                <!-- Project 3 -->
-                <div class="proj-entry">
-                    <div class="proj-title-row">
-                        <span>SPEAXA</span> <span style="font-weight: normal; color: #555;">|</span> <span class="proj-tech">Flutter, REST APIs</span> <span style="font-weight: normal; color: #555;">|</span> <a href="#" target="_blank">Website</a> <span style="font-weight: normal; color: #555;">|</span> <a href="#" target="_blank">Play Store</a>
+                        <span>Speaxa Teacher</span> <span style="font-weight: normal; color: #555;">|</span> <span class="proj-tech">Flutter, Dart, REST APIs</span> <span style="font-weight: normal; color: #555;">|</span> <a href="https://play.google.com/store/apps/details?id=com.speaxa.teacher" target="_blank">Play Store</a>
                     </div>
                     <ul class="bullet-list">
                         <li>Developed a multi-role education platform supporting digital learning workflows for teachers, students, parents, and administrators.</li>
                         <li>Built Flutter mobile experiences integrated with REST APIs for real-time data synchronization.</li>
-                        <li>Implemented class/session workflows, course and batch management, attendance, assignments/assessments, notifications, progress tracking, reports, and role-based dashboards.</li>
-                        <li>Supported interactive learning and teacher-led workflows with backend-driven data synchronization and responsive interfaces.</li>
+                        <li>Implemented class/session workflows, course &amp; batch management, attendance, assignments, and role-based dashboards.</li>
                     </ul>
                 </div>
 
-                <!-- Project 4 -->
+                <!-- Project 2: Human Heal -->
                 <div class="proj-entry">
                     <div class="proj-title-row">
-                        <span>Human Heal</span> <span style="font-weight: normal; color: #555;">|</span> <span class="proj-tech">Flutter, Play Store</span> <span style="font-weight: normal; color: #555;">|</span> <a href="#" target="_blank">Play Store</a>
+                        <span>Human Heal</span> <span style="font-weight: normal; color: #555;">|</span> <span class="proj-tech">Flutter, Healthcare</span> <span style="font-weight: normal; color: #555;">|</span> <a href="https://play.google.com/store/apps/details?id=com.human.health" target="_blank">Play Store</a>
                     </div>
                     <ul class="bullet-list">
-                        <li>Developed a service-focused mobile platform that enables users to explore trusted services, book appointments, track requests, access important information, and review previous activity in one place.</li>
-                        <li>Designed simple and organized booking, consultation, and activity-management flows focused on convenience and user-friendly navigation.</li>
-                        <li>Implemented user-data and booking-preference workflows with privacy, transparency, communication controls, and secure handling principles in mind.</li>
+                        <li>Developed a service-focused healthcare platform enabling users to explore trusted services, book appointments, track requests, and access patient records securely.</li>
+                        <li>Designed intuitive appointment scheduling flows and user-data management with privacy and transparency principles.</li>
                     </ul>
                 </div>
 
-                <!-- Project 5 -->
+                <!-- Project 3: Crux -->
                 <div class="proj-entry">
                     <div class="proj-title-row">
-                        <span>Cash Panther &amp; Cash Leo</span> <span style="font-weight: normal; color: #555;">|</span> <span class="proj-tech">Flutter, Play Store</span>
+                        <span>Crux</span> <span style="font-weight: normal; color: #555;">|</span> <span class="proj-tech">Flutter, Dart, GetX, Firebase</span> <span style="font-weight: normal; color: #555;">|</span> <a href="https://play.google.com/store/apps/details?id=com.mycrux.app" target="_blank">Play Store</a>
                     </div>
                     <ul class="bullet-list">
-                        <li>Created gamification applications offering rewarding experiences through task completion, gaming, and daily leaderboard participation.</li>
-                        <li>Developed reward accumulation and in-app purchase functionality with responsive interfaces across device types.</li>
+                        <li>Engineered a comprehensive startup workspace platform integrating project management, team communication, and analytics tools.</li>
+                        <li>Implemented GetX state management for seamless user interactions and integrated third-party APIs for real-time data retrieval.</li>
                     </ul>
                 </div>
 
-                <!-- Project 6 -->
+                <!-- Project 4: Quirix -->
                 <div class="proj-entry">
                     <div class="proj-title-row">
-                        <span>Cruxx News</span> <span style="font-weight: normal; color: #555;">|</span> <span class="proj-tech">Flutter, Play Store</span>
+                        <span>Quirix (Sportify)</span> <span style="font-weight: normal; color: #555;">|</span> <span class="proj-tech">Flutter, Sports &amp; Gaming</span> <span style="font-weight: normal; color: #555;">|</span> <a href="https://play.google.com/store/apps/details?id=com.sportifyCrux.app" target="_blank">Play Store</a>
                     </div>
                     <ul class="bullet-list">
-                        <li>Delivered a concise news aggregation platform providing real-time updates on stocks, markets, cryptocurrencies, and global events.</li>
-                        <li>Designed responsive application architecture for seamless performance across various device configurations.</li>
+                        <li>Created sports engagement application offering live tournament updates, interactive team challenges, and leaderboard participation.</li>
+                        <li>Developed reward accumulation and in-app purchase functionality with responsive UI architecture across Android devices.</li>
+                    </ul>
+                </div>
+
+                <!-- Project 5: Shrawan Care -->
+                <div class="proj-entry">
+                    <div class="proj-title-row">
+                        <span>Shrawan Care</span> <span style="font-weight: normal; color: #555;">|</span> <span class="proj-tech">Flutter, Healthcare</span> <span style="font-weight: normal; color: #555;">|</span> <a href="https://play.google.com/store/apps/details?id=com.shrawan.care" target="_blank">Play Store</a>
+                    </div>
+                    <ul class="bullet-list">
+                        <li>Developed a dedicated healthcare and elder care coordination platform providing assistive scheduling, routine monitoring, and caregiver support.</li>
+                    </ul>
+                </div>
+
+                <!-- Project 6: KhanaDeDe -->
+                <div class="proj-entry">
+                    <div class="proj-title-row">
+                        <span>KhanaDeDe</span> <span style="font-weight: normal; color: #555;">|</span> <span class="proj-tech">Flutter, Food Delivery</span> <span style="font-weight: normal; color: #555;">|</span> <a href="https://play.google.com/store/apps/details?id=com.khanadede" target="_blank">Play Store</a>
+                    </div>
+                    <ul class="bullet-list">
+                        <li>Built an on-demand food ordering &amp; delivery application featuring dynamic restaurant menus, real-time cart calculations, and instant checkout.</li>
                     </ul>
                 </div>
             </div>

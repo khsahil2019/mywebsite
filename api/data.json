@@ -145,8 +145,8 @@
             "value": "4+"
         },
         {
-            "label": "Projects Completed",
-            "value": "15+"
+            "label": "Live Play Store Apps",
+            "value": "6+"
         },
         {
             "label": "Coding Problems Solved",
@@ -197,8 +197,50 @@
     ],
     "projects": [
         {
-            "title": "Crux Flutter Play Store",
-            "description": "• Engineered a comprehensive start-up platform integrating project management, team communication, and analytics tools.\n• Implemented GetX state management and integrated third-party APIs for real-time data-driven functionality.",
+            "title": "Speaxa Teacher",
+            "package": "com.speaxa.teacher",
+            "description": "• Developed a multi-role education platform supporting digital learning workflows for teachers, students, parents, and administrators.\n• Built Flutter mobile experiences integrated with REST APIs for real-time data synchronization.\n• Implemented class/session workflows, course & batch management, attendance, assignments, and role-based dashboards.",
+            "tags": [
+                "Flutter",
+                "Dart",
+                "REST APIs",
+                "Play Store"
+            ],
+            "tech": "Flutter, Dart, REST APIs",
+            "icon_image": "/assets/apps/speaxa.png",
+            "icon": "fa-brands fa-google-play",
+            "is_live": true,
+            "link": "https://play.google.com/store/apps/details?id=com.speaxa.teacher",
+            "highlights": [
+                "Developed a multi-role education platform supporting digital learning workflows for teachers, students, parents, and administrators.",
+                "Built Flutter mobile experiences integrated with REST APIs for real-time data synchronization.",
+                "Implemented class/session workflows, course & batch management, attendance, assignments, and role-based dashboards."
+            ]
+        },
+        {
+            "title": "Human Heal",
+            "package": "com.human.health",
+            "description": "• Developed a service-focused healthcare platform enabling users to explore trusted medical services, book appointments, and track consultation requests.\n• Designed intuitive appointment scheduling flows and user-data management with privacy and transparency principles.\n• Integrated live doctor availability, appointment reminders, and records access.",
+            "tags": [
+                "Flutter",
+                "Healthcare",
+                "Play Store"
+            ],
+            "tech": "Flutter, Play Store",
+            "icon_image": "/assets/apps/human_heal.png",
+            "icon": "fa-brands fa-google-play",
+            "is_live": true,
+            "link": "https://play.google.com/store/apps/details?id=com.human.health",
+            "highlights": [
+                "Developed a service-focused healthcare platform enabling users to explore trusted medical services, book appointments, and track consultation requests.",
+                "Designed intuitive appointment scheduling flows and user-data management with privacy and transparency principles.",
+                "Integrated live doctor availability, appointment reminders, and records access."
+            ]
+        },
+        {
+            "title": "Crux",
+            "package": "com.mycrux.app",
+            "description": "• Engineered a comprehensive startup workspace platform integrating project management, team communication, and analytics tools.\n• Implemented GetX state management for seamless user interactions and integrated third-party APIs for real-time data retrieval.",
             "tags": [
                 "Flutter",
                 "Dart",
@@ -206,93 +248,70 @@
                 "Firebase"
             ],
             "tech": "Flutter, Dart, GetX, Firebase",
-            "icon": "fa-solid fa-briefcase",
-            "link": "#",
+            "icon_image": "/assets/apps/crux.png",
+            "icon": "fa-brands fa-google-play",
+            "is_live": true,
+            "link": "https://play.google.com/store/apps/details?id=com.mycrux.app",
             "highlights": [
-                "Engineered a comprehensive start-up platform integrating project management, team communication, and analytics tools.",
-                "Implemented GetX state management and integrated third-party APIs for real-time data-driven functionality."
+                "Engineered a comprehensive startup workspace platform integrating project management, team communication, and analytics tools.",
+                "Implemented GetX state management for seamless user interactions and integrated third-party APIs for real-time data retrieval."
             ]
         },
         {
-            "title": "Kabia Travels",
-            "description": "• Developed an intelligent travel planning application featuring personalized itineraries, local recommendations, booking integration, and payment functionality.",
+            "title": "Quirix (Sportify)",
+            "package": "com.sportifyCrux.app",
+            "description": "• Created sports engagement application offering live tournament updates, interactive team challenges, and leaderboard participation.\n• Developed reward accumulation and in-app purchase functionality with responsive UI architecture across Android devices.",
             "tags": [
                 "Flutter",
-                "Firebase",
+                "Sports & Gaming",
                 "Play Store"
             ],
             "tech": "Flutter, Play Store",
-            "icon": "fa-solid fa-plane-departure",
-            "link": "#",
+            "icon_image": "/assets/apps/quirix.png",
+            "icon": "fa-brands fa-google-play",
+            "is_live": true,
+            "link": "https://play.google.com/store/apps/details?id=com.sportifyCrux.app",
             "highlights": [
-                "Developed an intelligent travel planning application featuring personalized itineraries, local recommendations, booking integration, and payment functionality."
+                "Created sports engagement application offering live tournament updates, interactive team challenges, and leaderboard participation.",
+                "Developed reward accumulation and in-app purchase functionality with responsive UI architecture across Android devices."
             ]
         },
         {
-            "title": "SPEAXA",
-            "description": "• Developed a multi-role education platform supporting digital learning workflows for teachers, students, parents, and administrators.\n• Built Flutter mobile experiences integrated with REST APIs for real-time data synchronization.\n• Implemented class/session workflows, course and batch management, attendance, assignments/assessments, notifications, progress tracking, reports, and role-based dashboards.\n• Supported interactive learning and teacher-led workflows with backend-driven data synchronization and responsive interfaces.",
+            "title": "Shrawan Care",
+            "package": "com.shrawan.care",
+            "description": "• Developed a dedicated healthcare and elder care coordination platform providing assistive scheduling, routine monitoring, and caregiver support.\n• Implemented automated medication alerts, emergency contact triggers, and daily well-being activity tracking.",
             "tags": [
                 "Flutter",
-                "REST APIs",
+                "Healthcare",
                 "Play Store"
             ],
-            "tech": "Flutter, REST APIs",
-            "icon": "fa-solid fa-graduation-cap",
-            "link": "#",
+            "tech": "Flutter, Play Store",
+            "icon_image": "/assets/apps/shrawan_care.png",
+            "icon": "fa-brands fa-google-play",
+            "is_live": true,
+            "link": "https://play.google.com/store/apps/details?id=com.shrawan.care",
             "highlights": [
-                "Developed a multi-role education platform supporting digital learning workflows for teachers, students, parents, and administrators.",
-                "Built Flutter mobile experiences integrated with REST APIs for real-time data synchronization.",
-                "Implemented class/session workflows, course and batch management, attendance, assignments/assessments, notifications, progress tracking, reports, and role-based dashboards.",
-                "Supported interactive learning and teacher-led workflows with backend-driven data synchronization and responsive interfaces."
+                "Developed a dedicated healthcare and elder care coordination platform providing assistive scheduling, routine monitoring, and caregiver support.",
+                "Implemented automated medication alerts, emergency contact triggers, and daily well-being activity tracking."
             ]
         },
         {
-            "title": "Human Heal",
-            "description": "• Developed a service-focused mobile platform that enables users to explore trusted services, book appointments, track requests, access important information, and review previous activity in one place.\n• Designed simple and organized booking, consultation, and activity-management flows focused on convenience and user-friendly navigation.\n• Implemented user-data and booking-preference workflows with privacy, transparency, communication controls, and secure handling principles in mind.",
+            "title": "KhanaDeDe",
+            "package": "com.khanadede",
+            "description": "• Built an on-demand food ordering & delivery application featuring dynamic restaurant menus, real-time cart calculations, and instant checkout.\n• Integrated live delivery status tracking, location-based restaurant discovery, and customer reviews.",
             "tags": [
                 "Flutter",
-                "Play Store",
-                "Healthcare"
+                "Food Delivery",
+                "Play Store"
             ],
             "tech": "Flutter, Play Store",
-            "icon": "fa-solid fa-heart-pulse",
-            "link": "#",
+            "icon_image": "/assets/apps/khanadede.png",
+            "icon": "fa-brands fa-google-play",
+            "is_live": true,
+            "link": "https://play.google.com/store/apps/details?id=com.khanadede",
             "highlights": [
-                "Developed a service-focused mobile platform that enables users to explore trusted services, book appointments, track requests, access important information, and review previous activity in one place.",
-                "Designed simple and organized booking, consultation, and activity-management flows focused on convenience and user-friendly navigation.",
-                "Implemented user-data and booking-preference workflows with privacy, transparency, communication controls, and secure handling principles in mind."
-            ]
-        },
-        {
-            "title": "Cash Panther & Cash Leo",
-            "description": "• Created gamification applications offering rewarding experiences through task completion, gaming, and daily leaderboard participation.\n• Developed reward accumulation and in-app purchase functionality with responsive interfaces across device types.",
-            "tags": [
-                "Flutter",
-                "Play Store",
-                "Gamification"
-            ],
-            "tech": "Flutter, Play Store",
-            "icon": "fa-solid fa-gamepad",
-            "link": "#",
-            "highlights": [
-                "Created gamification applications offering rewarding experiences through task completion, gaming, and daily leaderboard participation.",
-                "Developed reward accumulation and in-app purchase functionality with responsive interfaces across device types."
-            ]
-        },
-        {
-            "title": "Cruxx News",
-            "description": "• Delivered a concise news aggregation platform providing real-time updates on stocks, markets, cryptocurrencies, and global events.\n• Designed responsive application architecture for seamless performance across various device configurations.",
-            "tags": [
-                "Flutter",
-                "Play Store",
-                "News"
-            ],
-            "tech": "Flutter, Play Store",
-            "icon": "fa-solid fa-newspaper",
-            "link": "#",
-            "highlights": [
-                "Delivered a concise news aggregation platform providing real-time updates on stocks, markets, cryptocurrencies, and global events.",
-                "Designed responsive application architecture for seamless performance across various device configurations."
+                "Built an on-demand food ordering & delivery application featuring dynamic restaurant menus, real-time cart calculations, and instant checkout.",
+                "Integrated live delivery status tracking, location-based restaurant discovery, and customer reviews."
             ]
         }
     ],

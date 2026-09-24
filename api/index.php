@@ -525,21 +525,38 @@ function renderSkill($skill) {
 
         <!-- Projects Section -->
         <section id="projects" class="projects section-padding">
-            <h3 class="section-title">Featured <span class="highlight">Projects</span></h3>
+            <h3 class="section-title">Live <span class="highlight">Play Store Applications</span></h3>
+            <p style="color: #a0aec0; text-align: center; max-width: 700px; margin: -20px auto 40px; font-size: 16px;">Production-grade Flutter applications engineered and published on the Google Play Store, serving real-world users.</p>
             <div class="projects-grid">
                 <?php foreach($projects as $index => $project): ?>
                     <div class="project-card glass-panel scroll-reveal" style="transition-delay: <?= ($index % 3) * 0.1 ?>s;">
-                        <div class="project-icon">
-                            <i class="<?= htmlspecialchars($project['icon']) ?>"></i>
+                        <div class="project-top-row">
+                            <div class="app-icon-wrapper">
+                                <?php if (!empty($project['icon_image'])): ?>
+                                    <img src="<?= htmlspecialchars($project['icon_image']) ?>" alt="<?= htmlspecialchars($project['title']) ?> Icon" class="app-icon-img" onerror="this.src='https://ui-avatars.com/api/?name=<?= urlencode($project['title']) ?>&size=128&background=1C3D5A&color=66FCF1'">
+                                <?php else: ?>
+                                    <div class="project-icon"><i class="<?= htmlspecialchars($project['icon']) ?>"></i></div>
+                                <?php endif; ?>
+                            </div>
+                            <?php if (!empty($project['is_live'])): ?>
+                                <span class="live-badge"><span class="live-dot"></span> Live on Play Store</span>
+                            <?php endif; ?>
                         </div>
+
                         <h4 class="project-title"><?= htmlspecialchars($project['title']) ?></h4>
                         <p class="project-desc"><?= nl2br(htmlspecialchars($project['description'])) ?></p>
+                        
                         <div class="project-tags">
                             <?php foreach($project['tags'] as $tag): ?>
                                 <span class="tag"><?= htmlspecialchars($tag) ?></span>
                             <?php endforeach; ?>
                         </div>
-                        <a href="<?= htmlspecialchars($project['link']) ?>" class="project-link" <?= $project['link'] !== '#' ? 'target="_blank"' : '' ?>>View Project <i class="fa-solid fa-arrow-right"></i></a>
+
+                        <?php if (!empty($project['link']) && $project['link'] !== '#'): ?>
+                            <a href="<?= htmlspecialchars($project['link']) ?>" target="_blank" class="project-link"><i class="fa-brands fa-google-play"></i> Get on Play Store <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 11px; margin-left: 3px;"></i></a>
+                        <?php else: ?>
+                            <span class="project-link" style="opacity: 0.7; cursor: default;">Coming Soon</span>
+                        <?php endif; ?>
                     </div>
                 <?php endforeach; ?>
             </div>
