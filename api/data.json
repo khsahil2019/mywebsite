@@ -2,29 +2,110 @@
     "name": "SAHIL KHAN",
     "location": "Greater Noida, Uttar Pradesh",
     "title": "Flutter Developer",
-    "about": "Results-driven Flutter Developer with 4+ years of hands-on experience designing, developing, and deploying high-performance mobile applications for Android and iOS platforms. Proven expertise in building scalable, data-driven solutions using Flutter, Dart, Node.js, PHP, Firebase, RESTful APIs, HTML and CSS. Demonstrated ability to integrate third-party APIs, optimize application performance, and implement responsive UI/UX designs. Adept at collaborating with cross-functional teams in Agile environments to deliver reliable digital products and business-focused solutions.",
+    "about": "Results-driven Flutter Developer with 4+ years of hands-on experience designing, developing, and deploying high-performance mobile applications for Android and iOS platforms. Proven expertise in building scalable, data-driven solutions using Flutter, Dart, Firebase, RESTful APIs, and modern state management. Demonstrated ability to integrate third-party APIs, optimize application performance, and implement responsive UI/UX designs. Adept at collaborating with cross-functional teams in Agile environments to deliver reliable digital products and business-focused solutions.",
     "email": "sahilkh3014@gmail.com",
     "phone": "+918739093014",
     "linkedin": "https://www.linkedin.com/in/mastersahilkhan/",
     "github": "https://github.com/khsahil2019",
     "skills": [
-        "Flutter & Dart",
-        "Cross-Platform (iOS/Android)",
-        "State Management (GetX)",
-        "Node.js",
-        "PHP",
-        "Firebase",
-        "RESTful APIs",
-        "Google Maps API",
-        "Push Notifications",
-        "Payment Gateways",
-        "HTML & CSS",
-        "Java",
-        "JavaScript",
-        "C",
-        "Git & GitHub",
-        "Agile Development & CI/CD",
-        "Data Structures & Algorithms"
+        {
+            "name": "Flutter & Dart",
+            "rating": 95,
+            "level": "Expert",
+            "icon": "devicon-flutter-plain colored",
+            "category": "Mobile Development"
+        },
+        {
+            "name": "State Management (GetX)",
+            "rating": 94,
+            "level": "Expert",
+            "icon": "fa-solid fa-bolt",
+            "category": "Mobile Development"
+        },
+        {
+            "name": "Cross-Platform (iOS/Android)",
+            "rating": 92,
+            "level": "Expert",
+            "icon": "fa-solid fa-mobile-screen-button",
+            "category": "Mobile Development"
+        },
+        {
+            "name": "RESTful API Integration",
+            "rating": 90,
+            "level": "Advanced",
+            "icon": "fa-solid fa-network-wired",
+            "category": "Mobile Development"
+        },
+        {
+            "name": "Firebase & Push Notifications",
+            "rating": 88,
+            "level": "Advanced",
+            "icon": "devicon-firebase-plain colored",
+            "category": "Mobile Development"
+        },
+        {
+            "name": "Google Maps & Location APIs",
+            "rating": 86,
+            "level": "Advanced",
+            "icon": "fa-solid fa-map-location-dot",
+            "category": "Mobile Development"
+        },
+        {
+            "name": "Payment Gateway Integration",
+            "rating": 85,
+            "level": "Advanced",
+            "icon": "fa-solid fa-credit-card",
+            "category": "Mobile Development"
+        },
+        {
+            "name": "Responsive UI/UX & Widgets",
+            "rating": 92,
+            "level": "Expert",
+            "icon": "fa-solid fa-palette",
+            "category": "Mobile Development"
+        },
+        {
+            "name": "Java",
+            "rating": 78,
+            "level": "Proficient",
+            "icon": "devicon-java-plain colored",
+            "category": "Programming & Core"
+        },
+        {
+            "name": "C Programming",
+            "rating": 75,
+            "level": "Intermediate",
+            "icon": "devicon-c-plain colored",
+            "category": "Programming & Core"
+        },
+        {
+            "name": "Data Structures & Algorithms",
+            "rating": 82,
+            "level": "Proficient",
+            "icon": "fa-solid fa-brain",
+            "category": "Programming & Core"
+        },
+        {
+            "name": "Git & GitHub Workflow",
+            "rating": 88,
+            "level": "Advanced",
+            "icon": "devicon-git-plain colored",
+            "category": "Tools & Workflow"
+        },
+        {
+            "name": "Agile Development & CI/CD",
+            "rating": 85,
+            "level": "Advanced",
+            "icon": "fa-solid fa-infinity",
+            "category": "Tools & Workflow"
+        },
+        {
+            "name": "Performance & Debugging",
+            "rating": 90,
+            "level": "Advanced",
+            "icon": "fa-solid fa-gauge-high",
+            "category": "Tools & Workflow"
+        }
     ],
     "core_competencies": {
         "mobile_development": [
@@ -37,19 +118,19 @@
         "technical_proficiencies": [
             {
                 "category": "Programming",
-                "skills": "Dart, C, Java, JavaScript"
+                "skills": "Dart, Java, C"
             },
             {
-                "category": "Frontend",
-                "skills": "Flutter Framework, HTML, CSS"
+                "category": "Mobile & Frontend",
+                "skills": "Flutter Framework, Material Design, Responsive UI/UX"
             },
             {
-                "category": "Backend & APIs",
-                "skills": "Node.js, Firebase, PHP, RESTful APIs, Third-Party Integration"
+                "category": "APIs & Cloud",
+                "skills": "Firebase, RESTful APIs, Third-Party Integration, Google Maps"
             },
             {
                 "category": "Tools",
-                "skills": "Git, GitHub"
+                "skills": "Git, GitHub, Android Studio, VS Code"
             },
             {
                 "category": "Methodologies",
@@ -137,10 +218,10 @@
             "description": "• Developed an intelligent travel planning application featuring personalized itineraries, local recommendations, booking integration, and payment functionality.",
             "tags": [
                 "Flutter",
-                "PHP",
+                "Firebase",
                 "Play Store"
             ],
-            "tech": "Flutter, PHP, Play Store",
+            "tech": "Flutter, Play Store",
             "icon": "fa-solid fa-plane-departure",
             "link": "#",
             "highlights": [
@@ -149,20 +230,18 @@
         },
         {
             "title": "SPEAXA",
-            "description": "• Developed a multi-role education platform supporting digital learning workflows for teachers, students, parents, and administrators.\n• Built Flutter mobile experiences integrated with Node.js/REST APIs and web components using HTML and CSS.\n• Implemented class/session workflows, course and batch management, attendance, assignments/assessments, notifications, progress tracking, reports, and role-based dashboards.\n• Supported interactive learning and teacher-led workflows with backend-driven data synchronization and responsive interfaces.",
+            "description": "• Developed a multi-role education platform supporting digital learning workflows for teachers, students, parents, and administrators.\n• Built Flutter mobile experiences integrated with REST APIs for real-time data synchronization.\n• Implemented class/session workflows, course and batch management, attendance, assignments/assessments, notifications, progress tracking, reports, and role-based dashboards.\n• Supported interactive learning and teacher-led workflows with backend-driven data synchronization and responsive interfaces.",
             "tags": [
                 "Flutter",
-                "Node.js",
-                "HTML",
-                "CSS",
-                "REST APIs"
+                "REST APIs",
+                "Play Store"
             ],
-            "tech": "Flutter, Node.js, HTML, CSS, REST APIs",
+            "tech": "Flutter, REST APIs",
             "icon": "fa-solid fa-graduation-cap",
             "link": "#",
             "highlights": [
                 "Developed a multi-role education platform supporting digital learning workflows for teachers, students, parents, and administrators.",
-                "Built Flutter mobile experiences integrated with Node.js/REST APIs and web components using HTML and CSS.",
+                "Built Flutter mobile experiences integrated with REST APIs for real-time data synchronization.",
                 "Implemented class/session workflows, course and batch management, attendance, assignments/assessments, notifications, progress tracking, reports, and role-based dashboards.",
                 "Supported interactive learning and teacher-led workflows with backend-driven data synchronization and responsive interfaces."
             ]

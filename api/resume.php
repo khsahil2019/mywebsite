@@ -30,17 +30,20 @@ $certifications = isset($data['certifications']) ? $data['certifications'] : [];
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?= htmlspecialchars($name) ?> - Resume</title>
+    <title><?= htmlspecialchars($name) ?> - Professional Resume</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@300;400;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
             --primary-navy: #1f3a5f;
             --accent-link: #0b5394;
-            --text-dark: #222222;
-            --text-muted: #333333;
+            --text-dark: #1e1e1e;
+            --text-muted: #3a3a3a;
             --border-line: #1f3a5f;
-            --bg-page: #eef2f6;
+            --bg-page: #f1f4f8;
+            --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
         }
 
         * {
@@ -53,14 +56,14 @@ $certifications = isset($data['certifications']) ? $data['certifications'] : [];
             font-family: 'Segoe UI', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
             background-color: var(--bg-page);
             color: var(--text-dark);
-            line-height: 1.35;
-            font-size: 13px;
-            padding: 24px 15px;
+            line-height: 1.42;
+            font-size: 13.5px;
+            padding: 30px 15px;
         }
 
         .actions-bar {
-            max-width: 820px;
-            margin: 0 auto 16px;
+            max-width: 860px;
+            margin: 0 auto 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -70,13 +73,13 @@ $certifications = isset($data['certifications']) ? $data['certifications'] : [];
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            padding: 8px 16px;
+            padding: 9px 18px;
             background: var(--primary-navy);
             color: #ffffff;
             border: 1px solid var(--primary-navy);
-            border-radius: 5px;
+            border-radius: 6px;
             font-weight: 600;
-            font-size: 13px;
+            font-size: 13.5px;
             cursor: pointer;
             text-decoration: none;
             transition: all 0.2s ease;
@@ -84,106 +87,111 @@ $certifications = isset($data['certifications']) ? $data['certifications'] : [];
 
         .btn:hover {
             background: #142a47;
+            border-color: #142a47;
             color: #fff;
+            transform: translateY(-1px);
         }
 
         .btn-outline {
             background: #fff;
             color: var(--primary-navy);
-            border: 1px solid #ccd2d8;
+            border: 1px solid #c8d1db;
         }
 
         .btn-outline:hover {
             background: var(--primary-navy);
+            border-color: var(--primary-navy);
             color: #fff;
         }
 
         .resume-sheet {
-            max-width: 820px;
+            max-width: 860px;
             margin: 0 auto;
             background: #ffffff;
-            padding: 34px 40px;
-            box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
-            border-radius: 2px;
+            padding: 44px 52px;
+            box-shadow: var(--card-shadow);
+            border-radius: 4px;
         }
 
         /* Header */
         .resume-header {
             text-align: center;
-            margin-bottom: 8px;
+            margin-bottom: 16px;
         }
 
         .resume-name {
-            font-size: 24px;
+            font-size: 28px;
             font-weight: 700;
-            letter-spacing: 1px;
+            letter-spacing: 1.5px;
             color: var(--primary-navy);
-            margin-bottom: 2px;
+            margin-bottom: 4px;
             text-transform: uppercase;
         }
 
         .resume-location {
-            font-size: 12px;
-            color: #555;
-            margin-bottom: 3px;
+            font-size: 13px;
+            color: #555555;
+            margin-bottom: 6px;
+            font-weight: 500;
         }
 
         .resume-contacts {
-            font-size: 12px;
+            font-size: 13px;
             display: flex;
             justify-content: center;
             align-items: center;
             flex-wrap: wrap;
-            gap: 6px;
-            padding-bottom: 6px;
-            border-bottom: 2px solid var(--border-line);
+            gap: 8px;
+            padding-bottom: 12px;
+            border-bottom: 2.5px solid var(--border-line);
         }
 
         .resume-contacts a {
             color: var(--accent-link);
             text-decoration: underline;
-            text-underline-offset: 2px;
+            text-underline-offset: 2.5px;
         }
 
         .resume-contacts span.sep {
-            color: #777;
+            color: #888888;
         }
 
-        /* Section titles */
+        /* Section Headings with enhanced margins */
         .section-header {
-            font-size: 13px;
+            font-size: 14.5px;
             font-weight: 700;
             color: var(--primary-navy);
             text-transform: uppercase;
-            letter-spacing: 0.6px;
-            padding-bottom: 2px;
-            margin-top: 10px;
-            margin-bottom: 5px;
+            letter-spacing: 0.8px;
+            padding-bottom: 4px;
+            margin-top: 18px;
+            margin-bottom: 10px;
             border-bottom: 1.5px solid var(--border-line);
         }
 
         .section-content {
-            font-size: 12.2px;
+            font-size: 13px;
             color: var(--text-dark);
         }
 
         .summary-text {
             text-align: justify;
-            line-height: 1.34;
+            line-height: 1.45;
+            color: #262626;
         }
 
         /* Bullet lists */
         ul.bullet-list {
             list-style: none;
             padding-left: 0;
-            margin: 1px 0 4px 0;
+            margin: 3px 0 8px 0;
         }
 
         ul.bullet-list li {
             position: relative;
-            padding-left: 14px;
-            margin-bottom: 2.5px;
-            line-height: 1.32;
+            padding-left: 16px;
+            margin-bottom: 3.5px;
+            line-height: 1.4;
             color: #242424;
             text-align: justify;
         }
@@ -194,19 +202,20 @@ $certifications = isset($data['certifications']) ? $data['certifications'] : [];
             left: 2px;
             top: -0.5px;
             color: #242424;
-            font-size: 12px;
+            font-size: 13px;
+            font-weight: bold;
         }
 
         /* Subheadings */
         .sub-header-title {
             font-weight: 700;
             color: #1a1a1a;
-            margin-top: 3px;
-            margin-bottom: 1px;
+            margin-top: 8px;
+            margin-bottom: 3px;
         }
 
         .exp-entry, .proj-entry, .edu-entry {
-            margin-bottom: 6px;
+            margin-bottom: 11px;
         }
 
         .exp-entry:last-child, .proj-entry:last-child, .edu-entry:last-child {
@@ -217,11 +226,11 @@ $certifications = isset($data['certifications']) ? $data['certifications'] : [];
             display: flex;
             justify-content: space-between;
             align-items: baseline;
-            margin-bottom: 1px;
+            margin-bottom: 2px;
         }
 
         .company-role {
-            font-size: 12.5px;
+            font-size: 13.5px;
             font-weight: 700;
             color: var(--primary-navy);
         }
@@ -232,17 +241,17 @@ $certifications = isset($data['certifications']) ? $data['certifications'] : [];
         }
 
         .date-range {
-            font-size: 11.5px;
+            font-size: 12.5px;
             font-weight: 500;
-            color: #333;
+            color: #444;
             white-space: nowrap;
         }
 
         .proj-title-row {
-            font-size: 12.5px;
+            font-size: 13.5px;
             font-weight: 700;
             color: #111;
-            margin-bottom: 1px;
+            margin-bottom: 2px;
         }
 
         .proj-title-row .proj-tech {
@@ -254,7 +263,7 @@ $certifications = isset($data['certifications']) ? $data['certifications'] : [];
         .proj-title-row a {
             color: var(--accent-link);
             text-decoration: underline;
-            margin-left: 4px;
+            margin-left: 6px;
             font-weight: 500;
             font-style: normal;
         }
@@ -262,17 +271,18 @@ $certifications = isset($data['certifications']) ? $data['certifications'] : [];
         .edu-inst {
             font-style: italic;
             color: #333;
+            margin-top: 1px;
         }
 
         .cert-item {
-            margin-bottom: 4px;
-            line-height: 1.34;
+            margin-bottom: 7px;
+            line-height: 1.4;
         }
 
         .check-sym {
             font-weight: bold;
-            color: #1f3a5f;
-            margin-right: 4px;
+            color: var(--primary-navy);
+            margin-right: 5px;
         }
 
         /* Page break divider for accurate 2-page print layout */
@@ -306,7 +316,7 @@ $certifications = isset($data['certifications']) ? $data['certifications'] : [];
             }
 
             .resume-name {
-                font-size: 17pt;
+                font-size: 17.5pt;
                 margin-bottom: 1pt;
             }
 
@@ -326,6 +336,11 @@ $certifications = isset($data['certifications']) ? $data['certifications'] : [];
                 margin-top: 7pt;
                 margin-bottom: 3pt;
                 padding-bottom: 1.5pt;
+            }
+
+            .sub-header-title {
+                margin-top: 3pt;
+                margin-bottom: 1pt;
             }
 
             .section-content {
@@ -415,16 +430,16 @@ $certifications = isset($data['certifications']) ? $data['certifications'] : [];
                     <li>Performance Optimization &amp; Debugging</li>
                 </ul>
 
-                <div class="sub-header-title" style="margin-top: 3px;">Technical Proficiencies:</div>
+                <div class="sub-header-title">Technical Proficiencies:</div>
                 <ul class="bullet-list">
-                    <li><strong>Programming:</strong> Dart, C, Java, JavaScript</li>
-                    <li><strong>Frontend:</strong> Flutter Framework, HTML, CSS</li>
-                    <li><strong>Backend &amp; APIs:</strong> Node.js, Firebase, PHP, RESTful APIs, Third-Party Integration</li>
-                    <li><strong>Tools:</strong> Git, GitHub</li>
+                    <li><strong>Programming:</strong> Dart, Java, C</li>
+                    <li><strong>Mobile &amp; Frontend:</strong> Flutter Framework, Material Design, Responsive UI/UX</li>
+                    <li><strong>APIs &amp; Cloud:</strong> Firebase, RESTful APIs, Third-Party Integration, Google Maps</li>
+                    <li><strong>Tools:</strong> Git, GitHub, Android Studio, VS Code</li>
                     <li><strong>Methodologies:</strong> Agile Development, CI/CD</li>
                 </ul>
 
-                <div style="margin-top: 3px; line-height: 1.34;">
+                <div style="margin-top: 6px; line-height: 1.4;">
                     <strong>Additional Skills:</strong> Google Map Integration, Push Notifications, Payment Gateway Integration, State Management (GetX), Responsive Design, Data Structures &amp; Algorithms, Version Control &amp; Workflow Management
                 </div>
             </div>
@@ -499,7 +514,7 @@ $certifications = isset($data['certifications']) ? $data['certifications'] : [];
                 <!-- Project 2 -->
                 <div class="proj-entry">
                     <div class="proj-title-row">
-                        <span>Kabia Travels</span> <span style="font-weight: normal; color: #555;">|</span> <span class="proj-tech">Flutter, PHP, Play Store</span>
+                        <span>Kabia Travels</span> <span style="font-weight: normal; color: #555;">|</span> <span class="proj-tech">Flutter, Play Store</span>
                     </div>
                     <ul class="bullet-list">
                         <li>Developed an intelligent travel planning application featuring personalized itineraries, local recommendations, booking integration, and payment functionality.</li>
@@ -509,11 +524,11 @@ $certifications = isset($data['certifications']) ? $data['certifications'] : [];
                 <!-- Project 3 -->
                 <div class="proj-entry">
                     <div class="proj-title-row">
-                        <span>SPEAXA</span> <span style="font-weight: normal; color: #555;">|</span> <span class="proj-tech">Flutter, Node.js, HTML, CSS, REST APIs</span> <span style="font-weight: normal; color: #555;">|</span> <a href="#" target="_blank">Website</a> <span style="font-weight: normal; color: #555;">|</span> <a href="#" target="_blank">Play Store</a>
+                        <span>SPEAXA</span> <span style="font-weight: normal; color: #555;">|</span> <span class="proj-tech">Flutter, REST APIs</span> <span style="font-weight: normal; color: #555;">|</span> <a href="#" target="_blank">Website</a> <span style="font-weight: normal; color: #555;">|</span> <a href="#" target="_blank">Play Store</a>
                     </div>
                     <ul class="bullet-list">
                         <li>Developed a multi-role education platform supporting digital learning workflows for teachers, students, parents, and administrators.</li>
-                        <li>Built Flutter mobile experiences integrated with Node.js/REST APIs and web components using HTML and CSS.</li>
+                        <li>Built Flutter mobile experiences integrated with REST APIs for real-time data synchronization.</li>
                         <li>Implemented class/session workflows, course and batch management, attendance, assignments/assessments, notifications, progress tracking, reports, and role-based dashboards.</li>
                         <li>Supported interactive learning and teacher-led workflows with backend-driven data synchronization and responsive interfaces.</li>
                     </ul>

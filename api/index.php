@@ -104,9 +104,59 @@ if (strpos($request_path, '/admin') === 0) {
     exit;
 }
 
+// Helper function for mapping skill icons
+function getSkillIcon($skill) {
+    $map = [
+        'Flutter & Dart' => 'devicon-flutter-plain colored',
+        'Flutter' => 'devicon-flutter-plain colored',
+        'Dart' => 'devicon-dart-plain colored',
+        'Cross-Platform' => 'fa-solid fa-mobile-screen-button',
+        'State Management' => 'fa-solid fa-bolt',
+        'GetX' => 'fa-solid fa-bolt',
+        'Node.js' => 'devicon-nodejs-plain colored',
+        'PHP' => 'devicon-php-plain colored',
+        'Firebase' => 'devicon-firebase-plain colored',
+        'RESTful' => 'fa-solid fa-network-wired',
+        'REST' => 'fa-solid fa-network-wired',
+        'Google Maps' => 'fa-solid fa-map-location-dot',
+        'Push Notifications' => 'fa-solid fa-bell',
+        'Payment' => 'fa-solid fa-credit-card',
+        'HTML & CSS' => 'devicon-html5-plain colored',
+        'HTML5' => 'devicon-html5-plain colored',
+        'CSS' => 'devicon-css3-plain colored',
+        'Java' => 'devicon-java-plain colored',
+        'JavaScript' => 'devicon-javascript-plain colored',
+        'C' => 'devicon-c-plain colored',
+        'Git & GitHub' => 'devicon-github-original',
+        'Git' => 'devicon-git-plain colored',
+        'GitHub' => 'devicon-github-original',
+        'Agile' => 'fa-solid fa-users-gear',
+        'CI/CD' => 'fa-solid fa-infinity',
+        'Data Structures' => 'fa-solid fa-brain',
+        'DSA' => 'fa-solid fa-brain',
+        'Problem Solving' => 'fa-solid fa-lightbulb',
+        'UI/UX' => 'fa-solid fa-palette',
+        'Responsive' => 'fa-solid fa-laptop-code',
+        'Sensor' => 'fa-solid fa-microchip',
+        'Performance' => 'fa-solid fa-gauge-high'
+    ];
+    foreach ($map as $key => $icon) {
+        if (stripos($skill, $key) !== false) {
+            return $icon;
+        }
+    }
+    return 'fa-solid fa-code';
+}
+
 // Helper function for rendering skill badges
 function renderSkill($skill) {
-    return "<span class='skill-badge'>" . htmlspecialchars($skill) . "</span>";
+    if (is_array($skill)) {
+        $name = $skill['name'] ?? '';
+        $icon = !empty($skill['icon']) ? $skill['icon'] : getSkillIcon($name);
+        return "<span class='skill-badge'><i class='" . htmlspecialchars($icon) . "'></i> " . htmlspecialchars($name) . "</span>";
+    }
+    $icon = getSkillIcon($skill);
+    return "<span class='skill-badge'><i class='" . htmlspecialchars($icon) . "'></i> " . htmlspecialchars($skill) . "</span>";
 }
 ?>
 <!DOCTYPE html>
@@ -120,10 +170,11 @@ function renderSkill($skill) {
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     
     <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
     
     <!-- Custom CSS -->
     <link rel="stylesheet" href="/assets/style.css">
@@ -139,6 +190,7 @@ function renderSkill($skill) {
             <a href="#" class="logo">S<span class="highlight">K</span></a>
             <ul class="nav-links">
                 <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
                 <li><a href="#experience">Experience</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#github-repos">GitHub</a></li>
@@ -158,7 +210,7 @@ function renderSkill($skill) {
                 </div>
                 <h1 class="name"><?= htmlspecialchars($name) ?></h1>
                 <h2 class="title type-writer"><?= htmlspecialchars($title) ?></h2>
-                <p class="description">Building premium digital products, brands, and experiences through robust code and stunning UI/UX design.</p>
+                <p class="description">Building high-performance, cross-platform mobile applications for Android &amp; iOS through Flutter, robust architectures, and intuitive UI/UX design.</p>
                 
                 <div class="action-buttons">
                     <a href="#projects" class="btn btn-primary">View My Work</a>
@@ -170,8 +222,8 @@ function renderSkill($skill) {
                 <div class="image-wrapper">
                     <!-- Updated image src to use the local uploaded photo -->
                     <img src="/assets/profile.jpg" alt="Sahil Khan" class="profile-img" onerror="this.src='https://ui-avatars.com/api/?name=Sahil+Khan&size=512&background=random&color=fff&font-size=0.33'">
-                    <div class="floating-badge badge-1"><i class="fa-brands fa-flutter"></i></div>
-                    <div class="floating-badge badge-2"><i class="fa-brands fa-php"></i></div>
+                    <div class="floating-badge badge-1" title="Flutter"><i class="devicon-flutter-plain colored"></i></div>
+                    <div class="floating-badge badge-2" title="Dart"><i class="devicon-dart-plain colored"></i></div>
                 </div>
             </div>
         </section>
@@ -183,7 +235,7 @@ function renderSkill($skill) {
                 <div class="about-text scroll-reveal">
                     <p><?= htmlspecialchars($about) ?></p>
                     <div class="skills-container">
-                        <h4>My Toolkit</h4>
+                        <h4>Core Stack</h4>
                         <div class="skills-list">
                             <?php foreach($skills as $skill): ?>
                                 <?= renderSkill($skill) ?>
@@ -198,6 +250,257 @@ function renderSkill($skill) {
                             <p><?= htmlspecialchars($stat['label']) ?></p>
                         </div>
                     <?php endforeach; ?>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills & Proficiency Ratings Section -->
+        <section id="skills" class="skills-section section-padding">
+            <h3 class="section-title">Technical <span class="highlight">Proficiency &amp; Skill Ratings</span></h3>
+            <p style="color: #a0aec0; text-align: center; max-width: 700px; margin: -20px auto 40px; font-size: 16px;">Specialized in Flutter cross-platform mobile engineering with strong proficiency in state management, native integrations, and production deployments.</p>
+            
+            <div class="skills-ratings-grid">
+                <!-- Card 1: Flutter & Mobile Ecosystem -->
+                <div class="skill-rating-card scroll-reveal" style="transition-delay: 0.1s;">
+                    <div class="rating-cat-title">
+                        <i class="devicon-flutter-plain colored"></i>
+                        <span>Flutter &amp; Mobile Ecosystem</span>
+                    </div>
+                    <div class="skill-bars-list">
+                        <!-- Skill 1 -->
+                        <div class="skill-bar-item">
+                            <div class="skill-info">
+                                <span class="skill-name-icon"><i class="devicon-flutter-plain colored"></i> Flutter &amp; Dart</span>
+                                <div class="skill-meta">
+                                    <span class="skill-level-badge">Expert</span>
+                                    <span class="skill-percent">95%</span>
+                                </div>
+                            </div>
+                            <div class="progress-track"><div class="progress-fill" style="width: 95%;"></div></div>
+                        </div>
+
+                        <!-- Skill 2 -->
+                        <div class="skill-bar-item">
+                            <div class="skill-info">
+                                <span class="skill-name-icon"><i class="fa-solid fa-bolt" style="color: #ffd166;"></i> GetX State Management</span>
+                                <div class="skill-meta">
+                                    <span class="skill-level-badge">Expert</span>
+                                    <span class="skill-percent">94%</span>
+                                </div>
+                            </div>
+                            <div class="progress-track"><div class="progress-fill" style="width: 94%;"></div></div>
+                        </div>
+
+                        <!-- Skill 3 -->
+                        <div class="skill-bar-item">
+                            <div class="skill-info">
+                                <span class="skill-name-icon"><i class="fa-solid fa-mobile-screen-button"></i> iOS &amp; Android Cross-Platform</span>
+                                <div class="skill-meta">
+                                    <span class="skill-level-badge">Expert</span>
+                                    <span class="skill-percent">92%</span>
+                                </div>
+                            </div>
+                            <div class="progress-track"><div class="progress-fill" style="width: 92%;"></div></div>
+                        </div>
+
+                        <!-- Skill 4 -->
+                        <div class="skill-bar-item">
+                            <div class="skill-info">
+                                <span class="skill-name-icon"><i class="fa-solid fa-palette"></i> Responsive UI/UX &amp; Custom Widgets</span>
+                                <div class="skill-meta">
+                                    <span class="skill-level-badge">Expert</span>
+                                    <span class="skill-percent">92%</span>
+                                </div>
+                            </div>
+                            <div class="progress-track"><div class="progress-fill" style="width: 92%;"></div></div>
+                        </div>
+
+                        <!-- Skill 5 -->
+                        <div class="skill-bar-item">
+                            <div class="skill-info">
+                                <span class="skill-name-icon"><i class="fa-solid fa-network-wired"></i> RESTful API Integration</span>
+                                <div class="skill-meta">
+                                    <span class="skill-level-badge">Advanced</span>
+                                    <span class="skill-percent">90%</span>
+                                </div>
+                            </div>
+                            <div class="progress-track"><div class="progress-fill" style="width: 90%;"></div></div>
+                        </div>
+
+                        <!-- Skill 6 -->
+                        <div class="skill-bar-item">
+                            <div class="skill-info">
+                                <span class="skill-name-icon"><i class="devicon-firebase-plain colored"></i> Firebase &amp; Push Notifications</span>
+                                <div class="skill-meta">
+                                    <span class="skill-level-badge">Advanced</span>
+                                    <span class="skill-percent">88%</span>
+                                </div>
+                            </div>
+                            <div class="progress-track"><div class="progress-fill" style="width: 88%;"></div></div>
+                        </div>
+
+                        <!-- Skill 7 -->
+                        <div class="skill-bar-item">
+                            <div class="skill-info">
+                                <span class="skill-name-icon"><i class="fa-solid fa-map-location-dot"></i> Google Maps &amp; Location APIs</span>
+                                <div class="skill-meta">
+                                    <span class="skill-level-badge">Advanced</span>
+                                    <span class="skill-percent">86%</span>
+                                </div>
+                            </div>
+                            <div class="progress-track"><div class="progress-fill" style="width: 86%;"></div></div>
+                        </div>
+
+                        <!-- Skill 8 -->
+                        <div class="skill-bar-item">
+                            <div class="skill-info">
+                                <span class="skill-name-icon"><i class="fa-solid fa-credit-card"></i> Payment Gateway Integration</span>
+                                <div class="skill-meta">
+                                    <span class="skill-level-badge">Advanced</span>
+                                    <span class="skill-percent">85%</span>
+                                </div>
+                            </div>
+                            <div class="progress-track"><div class="progress-fill" style="width: 85%;"></div></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2: Core Programming & Problem Solving -->
+                <div class="skill-rating-card scroll-reveal" style="transition-delay: 0.2s;">
+                    <div class="rating-cat-title">
+                        <i class="fa-solid fa-brain" style="color: #66FCF1;"></i>
+                        <span>Core Programming &amp; DSA</span>
+                    </div>
+                    <div class="skill-bars-list">
+                        <!-- Skill 1 -->
+                        <div class="skill-bar-item">
+                            <div class="skill-info">
+                                <span class="skill-name-icon"><i class="devicon-dart-plain colored"></i> Dart Language</span>
+                                <div class="skill-meta">
+                                    <span class="skill-level-badge">Expert</span>
+                                    <span class="skill-percent">95%</span>
+                                </div>
+                            </div>
+                            <div class="progress-track"><div class="progress-fill" style="width: 95%;"></div></div>
+                        </div>
+
+                        <!-- Skill 2 -->
+                        <div class="skill-bar-item">
+                            <div class="skill-info">
+                                <span class="skill-name-icon"><i class="fa-solid fa-brain"></i> Data Structures &amp; Algorithms</span>
+                                <div class="skill-meta">
+                                    <span class="skill-level-badge">Proficient</span>
+                                    <span class="skill-percent">82%</span>
+                                </div>
+                            </div>
+                            <div class="progress-track"><div class="progress-fill" style="width: 82%;"></div></div>
+                        </div>
+
+                        <!-- Skill 3 -->
+                        <div class="skill-bar-item">
+                            <div class="skill-info">
+                                <span class="skill-name-icon"><i class="fa-solid fa-lightbulb" style="color: #ffd166;"></i> Problem Solving &amp; Logic</span>
+                                <div class="skill-meta">
+                                    <span class="skill-level-badge">Advanced</span>
+                                    <span class="skill-percent">85%</span>
+                                </div>
+                            </div>
+                            <div class="progress-track"><div class="progress-fill" style="width: 85%;"></div></div>
+                        </div>
+
+                        <!-- Skill 4 -->
+                        <div class="skill-bar-item">
+                            <div class="skill-info">
+                                <span class="skill-name-icon"><i class="devicon-java-plain colored"></i> Java</span>
+                                <div class="skill-meta">
+                                    <span class="skill-level-badge">Proficient</span>
+                                    <span class="skill-percent">78%</span>
+                                </div>
+                            </div>
+                            <div class="progress-track"><div class="progress-fill" style="width: 78%;"></div></div>
+                        </div>
+
+                        <!-- Skill 5 -->
+                        <div class="skill-bar-item">
+                            <div class="skill-info">
+                                <span class="skill-name-icon"><i class="devicon-c-plain colored"></i> C Programming</span>
+                                <div class="skill-meta">
+                                    <span class="skill-level-badge">Intermediate</span>
+                                    <span class="skill-percent">75%</span>
+                                </div>
+                            </div>
+                            <div class="progress-track"><div class="progress-fill" style="width: 75%;"></div></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3: Tools, Workflow & Architecture -->
+                <div class="skill-rating-card scroll-reveal" style="transition-delay: 0.3s;">
+                    <div class="rating-cat-title">
+                        <i class="devicon-git-plain colored"></i>
+                        <span>Architecture &amp; Tools</span>
+                    </div>
+                    <div class="skill-bars-list">
+                        <!-- Skill 1 -->
+                        <div class="skill-bar-item">
+                            <div class="skill-info">
+                                <span class="skill-name-icon"><i class="fa-solid fa-gauge-high"></i> Performance Optimization &amp; Debugging</span>
+                                <div class="skill-meta">
+                                    <span class="skill-level-badge">Advanced</span>
+                                    <span class="skill-percent">90%</span>
+                                </div>
+                            </div>
+                            <div class="progress-track"><div class="progress-fill" style="width: 90%;"></div></div>
+                        </div>
+
+                        <!-- Skill 2 -->
+                        <div class="skill-bar-item">
+                            <div class="skill-info">
+                                <span class="skill-name-icon"><i class="devicon-git-plain colored"></i> Git &amp; GitHub Workflow</span>
+                                <div class="skill-meta">
+                                    <span class="skill-level-badge">Advanced</span>
+                                    <span class="skill-percent">88%</span>
+                                </div>
+                            </div>
+                            <div class="progress-track"><div class="progress-fill" style="width: 88%;"></div></div>
+                        </div>
+
+                        <!-- Skill 3 -->
+                        <div class="skill-bar-item">
+                            <div class="skill-info">
+                                <span class="skill-name-icon"><i class="fa-solid fa-infinity"></i> Agile Development &amp; CI/CD</span>
+                                <div class="skill-meta">
+                                    <span class="skill-level-badge">Advanced</span>
+                                    <span class="skill-percent">85%</span>
+                                </div>
+                            </div>
+                            <div class="progress-track"><div class="progress-fill" style="width: 85%;"></div></div>
+                        </div>
+
+                        <!-- Skill 4 -->
+                        <div class="skill-bar-item">
+                            <div class="skill-info">
+                                <span class="skill-name-icon"><i class="fa-solid fa-microchip"></i> Mobile Sensor Integration</span>
+                                <div class="skill-meta">
+                                    <span class="skill-level-badge">Advanced</span>
+                                    <span class="skill-percent">84%</span>
+                                </div>
+                            </div>
+                            <div class="progress-track"><div class="progress-fill" style="width: 84%;"></div></div>
+                        </div>
+
+                        <!-- Skill 5 -->
+                        <div class="skill-bar-item">
+                            <div class="skill-info">
+                                <span class="skill-name-icon"><i class="fa-solid fa-code-branch"></i> Flutter Version Control (FVC)</span>
+                                <div class="skill-meta">
+                                    <span class="skill-level-badge">Advanced</span>
+                                    <span class="skill-percent">85%</span>
+                                </div>
+                            </div>
+                            <div class="progress-track"><div class="progress-fill" style="width: 85%;"></div></div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
